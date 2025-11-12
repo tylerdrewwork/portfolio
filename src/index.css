@@ -13,119 +13,292 @@ body {
 .app {
   min-height: 100vh;
   background-image: radial-gradient(circle, #052310, #072613, #0a2916, #0d2d18, #10301b);
-  color: #ffffff;
-}
-
-.header {
-  padding: 2rem 3rem;
-  position: relative;
-  z-index: 10;
-}
-.header-content {
-  max-width: 1400px;
-  margin: 0 auto;
+  color: #000000;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #ffffff;
-}
-
-.nav {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-}
-
-.nav-link {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: opacity 0.3s ease;
-}
-.nav-link:hover {
-  opacity: 0.7;
-}
-
-.main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: calc(100vh - 120px);
-  padding: 2rem;
-}
-
-.hero {
+.sidebar {
+  background: #ffffff;
   width: 100%;
-  max-width: 1200px;
+  padding: 1.5rem 1rem;
+  order: 2;
 }
-.hero-content {
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 100%;
+}
+
+.profile-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3rem;
-}
-.hero-illustration {
-  position: relative;
-}
-.hero-text {
   text-align: center;
-  max-width: 800px;
-}
-.hero-title {
-  font-size: 3rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
-}
-.hero-description {
-  font-size: 1.25rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
+  padding: 1.5rem 1rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
 }
 
-.illustration-circle {
-  width: 200px;
-  height: 200px;
+.open-badge {
+  background: #000000;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  align-self: flex-start;
+}
+
+.profile-image {
+  margin-bottom: 1rem;
+}
+
+.profile-avatar {
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
-  box-shadow: 0 0 40px rgba(74, 222, 128, 0.3);
+  background: linear-gradient(135deg, #e5e5e5 0%, #d0d0d0 100%);
+  margin: 0 auto;
+}
+
+.profile-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.profile-handle {
+  font-size: 0.875rem;
+  color: #666666;
+  margin-bottom: 0.25rem;
+}
+
+.profile-location {
+  font-size: 0.875rem;
+  color: #666666;
+  margin-bottom: 0.5rem;
+}
+
+.profile-role {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.profile-experience {
+  font-size: 0.75rem;
+  color: #666666;
+  padding-top: 0.75rem;
+  border-top: 1px solid #e5e5e5;
+  width: 100%;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-item {
+  background: transparent;
+  border: none;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+.nav-item:hover {
+  background: #f5f5f5;
+}
+.nav-item.active {
+  background: #000000;
+  color: #ffffff;
+}
+
+.bookmark-btn {
+  background: transparent;
+  border: 1px solid #e5e5e5;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.bookmark-btn:hover {
+  background: #f5f5f5;
+}
+
+.main-content {
+  background: #ffffff;
+  flex: 1;
+  padding: 2rem 1rem;
+  order: 1;
+  min-height: calc(100vh - 200px);
+}
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 100%;
+}
+
+.hero-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero-label {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #666666;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.highlight {
-  background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
-  color: #0a0a0a;
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  font-weight: 600;
+.pause-icon {
+  font-size: 1rem;
 }
 
-@media (max-width: 768px) {
-  .header {
-    padding: 1.5rem 2rem;
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #000000;
+  letter-spacing: -0.02em;
+}
+
+.hero-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.hero-link {
+  color: #000000;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: opacity 0.2s ease;
+}
+.hero-link:hover {
+  opacity: 0.6;
+}
+
+.hero-illustration {
+  width: 100%;
+  aspect-ratio: 4/3;
+  position: relative;
+}
+
+.illustration-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.illustration-content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.illustration-bg {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #87ceeb 0%, #e0e0e0 50%, #ffa500 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.illustration-figure {
+  width: 60%;
+  height: 70%;
+  background: linear-gradient(135deg, #ffb6c1 0%, #d3d3d3 100%);
+  border-radius: 50% 50% 50% 50%/60% 60% 40% 40%;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 768px) {
+  .app {
+    flex-direction: row;
   }
 
-  .nav {
-    gap: 1.5rem;
+  .sidebar {
+    width: 280px;
+    min-width: 280px;
+    padding: 2rem 1.5rem;
+    order: 1;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  .main-content {
+    flex: 1;
+    padding: 3rem 2rem;
+    order: 2;
+    min-height: 100vh;
+  }
+
+  .hero-section {
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1400px;
+  }
+
+  .hero-text-container {
+    flex: 1;
+    max-width: 50%;
   }
 
   .hero-title {
-    font-size: 2rem;
+    font-size: 4rem;
   }
 
-  .hero-description {
-    font-size: 1rem;
+  .hero-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
   }
 
-  .illustration-circle {
-    width: 150px;
-    height: 150px;
+  .hero-illustration {
+    flex: 1;
+    max-width: 50%;
+    aspect-ratio: 1/1;
+  }
+
+  .profile-avatar {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media (min-width: 1200px) {
+  .hero-title {
+    font-size: 5rem;
+  }
+
+  .sidebar {
+    width: 320px;
+    min-width: 320px;
   }
 }

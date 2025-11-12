@@ -1,33 +1,59 @@
+import contactInfo from './config';
+
 function App() {
   return (
     <div className="app">
-      <header className="header">
-        <div className="header-content">
-          <div className="logo">Logo</div>
-          <nav className="nav">
-            <a href="#" className="nav-link">Work</a>
-            <a href="#" className="nav-link">Resume</a>
-            <a href="#" className="nav-link">Contact</a>
-          </nav>
-        </div>
-      </header>
-      
-      <main className="main">
-        <section className="hero">
-          <div className="hero-content">
-            <div className="hero-illustration">
-              <div className="illustration-circle"></div>
+      <aside className="sidebar">
+        <div className="sidebar-content">
+          <div className="profile-card">
+            {contactInfo.openToWork && (
+              <div className="open-badge">Open to Work</div>
+            )}
+            <div className="profile-image">
+              <div className="profile-avatar"></div>
             </div>
-            <div className="hero-text">
-              <h1 className="hero-title">
-                <span className="highlight">Tyler Smith</span>
-              </h1>
-              <p className="hero-description">
-                I am a <span className="highlight">creative professional</span> exploring the intersection of design, technology, and innovation to craft digital experiences that are both visually striking and highly functional.
-              </p>
+            <h2 className="profile-name">{contactInfo.fullname}</h2>
+            <p className="profile-handle">{contactInfo.handle}</p>
+            <p className="profile-location">{contactInfo.location}</p>
+            <p className="profile-role">{contactInfo.role}</p>
+            <div className="profile-experience">
+              <span>{contactInfo.yearsExperience} Years Experience</span>
             </div>
           </div>
-        </section>
+          
+          <nav className="sidebar-nav">
+            <button className="nav-item">Profile</button>
+            <button className="nav-item active">Portfolio</button>
+          </nav>
+          
+          <button className="bookmark-btn">Bookmark</button>
+        </div>
+      </aside>
+      
+      <main className="main-content">
+        <div className="hero-section">
+          <div className="hero-text-container">
+            <div className="hero-label">
+              <span className="pause-icon">⏸</span>
+              <span>DESIGNING</span>
+            </div>
+            <h1 className="hero-title">WORLD OF PLAY</h1>
+            <nav className="hero-nav">
+              <a href="#" className="hero-link">Game design</a>
+              <a href="#" className="hero-link">Product design</a>
+              <a href="#" className="hero-link">About me</a>
+              <a href="#" className="hero-link">Resume</a>
+            </nav>
+          </div>
+          <div className="hero-illustration">
+            <div className="illustration-placeholder">
+              <div className="illustration-content">
+                <div className="illustration-bg"></div>
+                <div className="illustration-figure"></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
     </div>
   )
