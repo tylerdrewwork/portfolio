@@ -5,7 +5,9 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -13,20 +15,21 @@ body {
 .app {
   min-height: 100vh;
   background-image: radial-gradient(circle, #052310, #072613, #0a2916, #0d2d18, #10301b);
-  color: #ffffff;
+    color: #ffffff;
 }
 
 .header {
   padding: 2rem 3rem;
   position: relative;
   z-index: 10;
-}
-.header-content {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+  &-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .logo {
@@ -46,9 +49,10 @@ body {
   text-decoration: none;
   font-size: 1rem;
   transition: opacity 0.3s ease;
-}
-.nav-link:hover {
-  opacity: 0.7;
+
+  &:hover {
+    opacity: 0.7;
+  }
 }
 
 .main {
@@ -62,30 +66,35 @@ body {
 .hero {
   width: 100%;
   max-width: 1200px;
-}
-.hero-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3rem;
-}
-.hero-illustration {
-  position: relative;
-}
-.hero-text {
-  text-align: center;
-  max-width: 800px;
-}
-.hero-title {
-  font-size: 3rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
-}
-.hero-description {
-  font-size: 1.25rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  &-illustration {
+    position: relative;
+  }
+
+  &-text {
+    text-align: center;
+    max-width: 800px;
+  }
+
+  &-title {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+
+  &-description {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+  }
 }
 
 .illustration-circle {
@@ -129,3 +138,4 @@ body {
     height: 150px;
   }
 }
+
