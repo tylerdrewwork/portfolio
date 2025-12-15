@@ -135,18 +135,17 @@ body {
 }
 
 .main-content {
-  background: #ffffff;
+  background-color: #020b18;
   flex: 1;
-  padding: 2rem 1rem;
   order: 1;
   min-height: calc(100vh - 200px);
 }
 
-@media (min-width: 768px) {
-  .app {
-    flex-direction: row;
-  }
+.main-content > * {
+  padding: 2rem 1rem;
+}
 
+@media (min-width: 768px) {
   .sidebar {
     width: 280px;
     min-width: 280px;
@@ -160,9 +159,12 @@ body {
 
   .main-content {
     flex: 1;
-    padding: 3rem 2rem;
     order: 2;
     min-height: 100vh;
+  }
+
+  .main-content > * {
+    padding: 3rem 2rem;
   }
 
   .profile-avatar {
