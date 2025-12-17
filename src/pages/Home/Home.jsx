@@ -1,6 +1,95 @@
+import { useEffect, useRef } from 'react';
+import $ from 'jquery';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import './Home.scss';
 
+// Make jQuery available globally for slick
+if (typeof window !== 'undefined') {
+    window.jQuery = window.$ = $;
+}
+
 function Home() {
+    const carouselRef = useRef(null);
+
+    useEffect(() => {
+        // Dynamically import slick after component mounts
+        import('slick-carousel/slick/slick.min.js').then(() => {
+            if (carouselRef.current && window.$) {
+                const $carousel = $(carouselRef.current);
+                
+                $(carouselRef.current).slick({
+                    dots: true,
+                    infinite: true,
+                    speed: 300,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    centerMode: true,
+                    centerPadding: '60px',
+                    autoplay: true,
+                    autoplaySpeed: 3000,
+                    arrows: true,
+                    customPaging: function(slider, i) {
+                        // Get the slide element
+                        const slide = slider.$slides[i];
+                        const $slide = $(slide);
+                        
+                        // Try to find an image in the slide
+                        const $img = $slide.find('img');
+                        const $placeholder = $slide.find('.portfolio-image-placeholder');
+                        
+                        let imageSrc = '';
+                        let altText = `Slide ${i + 1}`;
+                        
+                        if ($img.length > 0) {
+                            // If there's an actual image, use it
+                            imageSrc = $img.attr('src') || $img.attr('data-src') || '';
+                            altText = $img.attr('alt') || altText;
+                        } else if ($placeholder.length > 0) {
+                            // If there's a placeholder with a data-image attribute, use it
+                            imageSrc = $placeholder.attr('data-image') || '';
+                            altText = $placeholder.text() || altText;
+                        }
+                        
+                        // Return custom HTML for the dot
+                        if (imageSrc) {
+                            return `<a><img src="${imageSrc}" alt="${altText}" class="slick-dot-image" /></a>`;
+                        } else {
+                            // Fallback to default dot if no image
+                            return `<a>${i + 1}</a>`;
+                        }
+                    },
+                    responsive: [
+                        {
+                            breakpoint: 768,
+                            settings: {
+                                centerMode: true,
+                                centerPadding: '40px',
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                        },
+                        {
+                            breakpoint: 480,
+                            settings: {
+                                centerMode: true,
+                                centerPadding: '20px',
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                        }
+                    ]
+                });
+            }
+        });
+
+        return () => {
+            if (carouselRef.current && window.$ && $(carouselRef.current).hasClass('slick-initialized')) {
+                $(carouselRef.current).slick('unslick');
+            }
+        };
+    }, []);
+
     return (
         <main className="main-content">
             {/* Hero section with space for your MP4 */}
@@ -29,45 +118,43 @@ function Home() {
             {/* Portfolio / achievements section */}
             <section id="portfolio" className="portfolio-section">
                 <div className="section-header">
-                    <h2 className="section-title">Projects</h2>
+                    {/* <h2 className="section-title">Projects</h2>
                     <p className="section-subtitle">
                         Some projects I'm proud of.
-                    </p>
+                    </p> */}
                 </div>
-                <div className="portfolio-gallery">
-                    <div className="portfolio-track">
-                        <article className="portfolio-item">
-                            <div className="portfolio-image-placeholder">Project 1</div>
-                            <h3 className="portfolio-item-title">Highlight Project</h3>
-                            <p className="portfolio-item-text">
-                                Short description of a flagship project, outcome, or achievement.
-                            </p>
-                        </article>
-                        <article className="portfolio-item">
-                            <div className="portfolio-image-placeholder">Project 2</div>
-                            <h3 className="portfolio-item-title">Visual Explorations</h3>
-                            <p className="portfolio-item-text">
-                                A place for visuals, motion studies, or experimental pieces.
-                            </p>
-                        </article>
-                        <article className="portfolio-item">
-                            <div className="portfolio-image-placeholder">Project 3</div>
-                            <h3 className="portfolio-item-title">Client Work</h3>
-                            <p className="portfolio-item-text">
-                                Space to feature collaborations, commissions, or shipped features.
-                            </p>
-                        </article>
-                        <article className="portfolio-item">
-                            <div className="portfolio-image-placeholder">Project 4</div>
-                            <h3 className="portfolio-item-title">In Progress</h3>
-                            <p className="portfolio-item-text">
-                                Room for upcoming or in-progress ideas you want to tease.
-                            </p>
-                        </article>
-                    </div>
+                <div className="portfolio-carousel" ref={carouselRef}>
+                    <article className="portfolio-item">
+                        <div className="portfolio-image-placeholder" data-image="/public/assets/images/thumb-aiw.png">Project 1</div>
+                        <h3 className="portfolio-item-title">Highlight Project</h3>
+                        <p className="portfolio-item-text">
+                            Short description of a flagship project, outcome, or achievement.
+                        </p>
+                    </article>
+                    <article className="portfolio-item">
+                        <div className="portfolio-image-placeholder" data-image="">Project 2</div>
+                        <h3 className="portfolio-item-title">Visual Explorations</h3>
+                        <p className="portfolio-item-text">
+                            A place for visuals, motion studies, or experimental pieces.
+                        </p>
+                    </article>
+                    <article className="portfolio-item">
+                        <div className="portfolio-image-placeholder" data-image="">Project 3</div>
+                        <h3 className="portfolio-item-title">Client Work</h3>
+                        <p className="portfolio-item-text">
+                            Space to feature collaborations, commissions, or shipped features.
+                        </p>
+                    </article>
+                    <article className="portfolio-item">
+                        <div className="portfolio-image-placeholder" data-image="">Project 4</div>
+                        <h3 className="portfolio-item-title">In Progress</h3>
+                        <p className="portfolio-item-text">
+                            Room for upcoming or in-progress ideas you want to tease.
+                        </p>
+                    </article>
                 </div>
                 <p className="portfolio-caption">
-                    Scroll horizontally to browse — swap these placeholders with your own images and copy.
+                    Use arrows or swipe to browse — swap these placeholders with your own images and copy.
                 </p>
             </section>
 
