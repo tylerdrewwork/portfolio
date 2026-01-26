@@ -1,0 +1,34 @@
+.section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.section-subtitle {
+  font-size: 0.95rem;
+  color: #c7d2e0;
+}
+
+.about-section {
+  max-width: 960px;
+  margin: 0 auto 3rem auto;
+}
+
+.about-card {
+  background: rgba(4, 12, 24, 0.95);
+  border-radius: 12px;
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: #d1d5db;
+}
