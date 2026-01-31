@@ -1,0 +1,42 @@
+.projects-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.project-category-section {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  scroll-margin-top: 2rem;
+}
+
+.project-category-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  scroll-margin-top: 2rem;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.project-description {
+  font-size: 0.95rem;
+  color: #d1d5db;
+  line-height: 1.6;
+  margin: 0;
+}
