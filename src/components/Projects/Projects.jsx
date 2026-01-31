@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import projectData from './projectData';
-import ProjectImageCarousel from './ProjectImageCarousel';
+import ProjectImageGallery from './ProjectImageGallery';
 import './Projects.scss';
 
 function Projects() {
@@ -35,7 +35,7 @@ function Projects() {
                             <article key={`${project.id}-${project.projectName}`} className="project-item" id={projectSlug}>
                                 <h3 className="project-title">{project.projectName}</h3>
                                 {project.projectImages && project.projectImages.length > 0 && (
-                                    <ProjectImageCarousel 
+                                    <ProjectImageGallery
                                         images={project.projectImages}
                                         projectName={project.projectName}
                                     />

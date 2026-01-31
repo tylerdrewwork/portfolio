@@ -1,3 +1,4 @@
+// projectImages: string (URL) or { src, caption } for tile gallery. Caption shows under each tile.
 const projectData = [
     {
         id: 1,
@@ -5,8 +6,8 @@ const projectData = [
         projectName: 'AI Warehouse Humanoid Agents',
         description: 'Created all of the agents for AI Warehouse',
         projectImages: [
-            '/public/assets/images/projects/ai-warehouse/tooling-1.png',
-            '/public/assets/images/projects/ai-warehouse/tooling-2.png',
+            { src: '/public/assets/images/projects/ai-warehouse/tooling-1.png', caption: 'Tooling screenshot' },
+            { src: '/public/assets/images/projects/ai-warehouse/tooling-2.png', caption: 'Tooling overview' },
         ]
     },
     {
@@ -15,9 +16,9 @@ const projectData = [
         projectName: 'Muscle System',
         description: 'A place for visuals, motion studies, or experimental pieces.',
         projectImages: [
-            '/public/assets/images/projects/ai-warehouse/gifs/agent muscles motion.gif',
-            '/public/assets/images/projects/ai-warehouse/gifs/muscles.gif',
-            '/public/assets/images/projects/ai-warehouse/agent muscles.png',
+            { src: '/public/assets/images/projects/ai-warehouse/gifs/agent muscles motion.gif', caption: 'Agent motion' },
+            { src: '/public/assets/images/projects/ai-warehouse/gifs/muscles.gif', caption: 'Muscle system' },
+            { src: '/public/assets/images/projects/ai-warehouse/agent muscles.png', caption: 'Agent rig' },
         ]
     },
     {
