@@ -3,9 +3,14 @@ import './ProjectImageGallery.scss';
 
 function normalizeImage(item) {
     if (typeof item === 'string') {
-        return { src: item, caption: '' };
+        return { src: item, caption: '', offsetX: 0, offsetY: 0 };
     }
-    return { src: item.src, caption: item.caption || '' };
+    return {
+        src: item.src,
+        caption: item.caption || '',
+        offsetX: item.offsetX ?? 0,
+        offsetY: item.offsetY ?? 0
+    };
 }
 
 function ProjectImageGallery({ images, projectName }) {
@@ -43,6 +48,9 @@ function ProjectImageGallery({ images, projectName }) {
                             src={item.src}
                             alt={item.caption || `${projectName} - Image ${index + 1}`}
                             className="gallery-tile-image"
+                            style={{
+                                objectPosition: `${item.offsetX}% ${item.offsetY}%`
+                            }}
                         />
                     </button>
                     {item.caption && (
