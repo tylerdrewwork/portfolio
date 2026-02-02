@@ -26,7 +26,6 @@
   cursor: pointer;
   position: relative;
   display: inline-block;
-  width: fit-content;
 }
 .toc-section-link:hover {
   color: #ffffff;
@@ -55,7 +54,6 @@
   cursor: pointer;
   position: relative;
   display: inline-block;
-  width: fit-content;
 }
 .toc-child-link:hover {
   color: #d1d5db;
