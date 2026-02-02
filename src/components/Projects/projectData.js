@@ -1,6 +1,7 @@
 // projectImages: string (URL) or { src, caption?, offsetX?, offsetY? }. offsetX/offsetY (default 0) set object-position % in gallery tile only (0,0=top-left, 50,50=center).
 // In projectImages you can add YouTube as a tile: { type: 'youtube', youtubeId: 'VIDEO_ID' or full URL, caption: '...' }.
 // description: supports HTML (e.g. <br /> for line breaks).
+// albert-updates: https://discord.gg/aTun9jkFnB
 const projectData = [
     {
         id: 1,
@@ -24,7 +25,6 @@ const projectData = [
             { src: 'assets/images/projects/ai-warehouse/gifs/agent muscles motion.gif', caption: 'Agent motion' },
             { src: 'assets/images/projects/ai-warehouse/gifs/muscles.gif', caption: 'Muscle system' },
             { src: 'assets/images/projects/ai-warehouse/agent muscles.png', caption: 'Agent rig' },
-            { src: 'assets/images/projects/ai-warehouse/maze-game-analytics.png', caption: 'Maze game analytics', offsetX: 0, offsetY: 0 },
             { src: 'assets/images/projects/ai-warehouse/gifs/bike.gif', caption: 'Bike', offsetX: 0, offsetY: 0 },
         ]
     },
@@ -45,9 +45,16 @@ const projectData = [
     {
         id: 4,
         category: 'aiw',
-        projectName: 'AI Warehouse Community Games!',
-        description: 'Room for upcoming or in-progress ideas you want to tease.',
-        projectImages: []
+        projectName: 'AI Warehouse Community & Games!',
+        description: '<a href="https://aiwarehouse.itch.io/maze" target="_blank">CLICK TO GO TO THE AI WAREHOUSE MAZE GAME PAGE.</a> <b>Password is albert4ever</b>. </br> Volunteered to take initiative to grow the Discord community to an active 19k members through consistent updates and community engagement.',
+        projectImages: [
+            {src: 'assets/images/projects/ai-warehouse/aiw community banner.png', caption: ''},
+            {src: 'assets/images/projects/ai-warehouse/maze-game-analytics.png', caption: 'Maze game analytics', offsetX: 0, offsetY: 0 },
+            {src: 'assets/images/projects/ai-warehouse/game1.png', caption: ''},
+            {src: 'assets/images/projects/ai-warehouse/game2.png', caption: ''},
+            {src: 'assets/images/projects/ai-warehouse/discord_updates.png', caption: 'Growing the community through engagement!'},
+            {src: 'assets/images/projects/ai-warehouse/maze community.png', caption: ''},
+        ]
     },
     {
         id: 6,
