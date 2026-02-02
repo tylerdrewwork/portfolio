@@ -41,9 +41,12 @@ function Projects() {
                                         projectName={project.projectName}
                                     />
                                 )}
-                                <p className="project-description">
-                                    {project.description}
-                                </p>
+                                {project.description && (
+                                    <p
+                                        className="project-description"
+                                        dangerouslySetInnerHTML={{ __html: project.description }}
+                                    />
+                                )}
                             </article>
                         );
                     })}

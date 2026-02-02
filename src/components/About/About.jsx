@@ -4,16 +4,14 @@ import './About.scss';
 function About() {
     return (
         <section id="about" className="about-section">
-            <h1 className="about-name">Hi, I&apos;m Tyler Smith</h1>
+            <h1 className="about-name">Hi, I'm Tyler Smith</h1>
             <div className="about-bio">
                 <p>
-                    This is a space to write a few honest paragraphs about who you are, what you&apos;re
-                    curious about, and how you like to work. Talk about your background, the kind of
-                    problems you enjoy solving, and what you&apos;re exploring next.
+                    Software Engineer with almost 10 years of C# Unity experience and 4+ years of professional experience.
                 </p>
                 <p>
-                    You can keep this conversational and human — it&apos;s meant to feel like a short
-                    introduction rather than a resume.
+                    My strengths are in game design, development, and systems architecture. 
+                    I LOVE building games, toys, tools, and experiences that people can enjoy or learn from. I especially have a strong passion for physics and simulation games. 
                 </p>
                 <p>
                     Recent work includes:
