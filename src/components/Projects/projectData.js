@@ -1,4 +1,5 @@
 // projectImages: string (URL) or { src, caption?, offsetX?, offsetY? }. offsetX/offsetY (default 0) set object-position % in gallery tile only (0,0=top-left, 50,50=center).
+// In projectImages you can add YouTube as a tile: { type: 'youtube', youtubeId: 'VIDEO_ID' or full URL, caption: '...' }.
 // description: supports HTML (e.g. <br /> for line breaks).
 const projectData = [
     {
@@ -7,11 +8,12 @@ const projectData = [
         projectName: 'AI Warehouse Humanoid Agents',
         description: 'Created all of the agent\'s rigs for AI Warehouse. Created systems like abilities, room modules, agent modules, and auto behavior parameter tuning. Agent abilities was one of the biggest improvements, since it made creating new agents with new mechanics much easier.',
         projectImages: [
+            { type: 'youtube', youtubeId: 'hCmrMOzx5VA', caption: 'AI Warehouse Humanoid Agents' },
             { src: 'assets/images/projects/ai-warehouse/tooling-1.png', caption: 'Tooling screenshot' },
             { src: 'assets/images/projects/ai-warehouse/tooling-2.png', caption: 'Tooling overview' },
             { src: 'assets/images/projects/ai-warehouse/agent-horse.png', caption: 'Agent Horse' },
             { src: 'assets/images/projects/ai-warehouse/agent-pip.png', caption: 'Agent Pip' },
-        ]
+        ],
     },
     {
         id: 2,
@@ -45,13 +47,6 @@ const projectData = [
         category: 'aiw',
         projectName: 'AI Warehouse Community Games!',
         description: 'Room for upcoming or in-progress ideas you want to tease.',
-        projectImages: []
-    },
-    {
-        id: 5,
-        category: 'new',
-        projectName: 'TEST!',
-        description: 'TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST TBHIS IS A TEST .',
         projectImages: []
     },
     {
