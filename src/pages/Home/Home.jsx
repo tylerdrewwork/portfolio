@@ -17,7 +17,6 @@ function Home() {
                     <div className="content-panel-inner">
                         <AboutIntro />
                         <Projects />
-                        <Contact />
                     </div>
                 </div>
             </div>

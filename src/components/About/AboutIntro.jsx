@@ -1,3 +1,4 @@
+import AboutLinks from './AboutLinks';
 import './About.scss';
 
 function AboutIntro() {
@@ -20,12 +21,7 @@ function AboutIntro() {
                     WipeRecord, lead dev - built tools for sales team, paralegal team, and our client base. 
                 </p>
             </div>
-            <div className="about-links">
-                <a href="#" className="about-link">→ Resumé</a>
-                <a href="#" className="about-link">→ LinkedIn</a>
-                <a href="#" className="about-link">→ Twitter</a>
-                <a href="#" className="about-link">→ GitHub</a>
-            </div>
+            <AboutLinks className="about-links-intro" />
         </section>
     );
 }
