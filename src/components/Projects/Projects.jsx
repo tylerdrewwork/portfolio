@@ -28,6 +28,7 @@ function Projects() {
             {Object.entries(groupedProjects).map(([category, projects]) => (
                 <div key={category} id={`section-${category}`} className="project-category-section">
                     <h2 className="project-category-title">{categoryNames[category] || category}</h2>
+                    <div className="project-category-group">
                     {projects.map((project, index) => {
                         // Create a unique ID from project name (slugified)
                         const projectSlug = project.projectName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
@@ -46,6 +47,7 @@ function Projects() {
                             </article>
                         );
                     })}
+                    </div>
                 </div>
             ))}
         </section>

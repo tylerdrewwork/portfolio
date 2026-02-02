@@ -15,13 +15,13 @@ const projectData = [
     {
         id: 2,
         category: 'aiw',
-        projectName: 'Systems & Tools Creation',
-        description: 'A place for visuals, motion studies, or experimental pieces.',
+        projectName: 'Mechanics, Systems, & Tools Creation',
+        description: 'All of the mechanics, tooling and systems in the videos during my time at AI Warehouse were made by me. Tooling was made for the Game Development and Machine Learning teams on request and sometimes proactively if they agreed it would be helpful. Systems were made to help the Game Development team build environments faster and more efficiently.',
         projectImages: [
             { src: '/public/assets/images/projects/ai-warehouse/gifs/agent muscles motion.gif', caption: 'Agent motion' },
             { src: '/public/assets/images/projects/ai-warehouse/gifs/muscles.gif', caption: 'Muscle system' },
             { src: '/public/assets/images/projects/ai-warehouse/agent muscles.png', caption: 'Agent rig' },
-            { src: '/public/assets/images/projects/ai-warehouse/maze-game-analytics.png', caption: 'Maze game analytics', offsetX: 50, offsetY: 0 },
+            { src: '/public/assets/images/projects/ai-warehouse/maze-game-analytics.png', caption: 'Maze game analytics', offsetX: 0, offsetY: 0 },
         ]
     },
     {

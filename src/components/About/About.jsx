@@ -18,7 +18,7 @@ function About() {
                 <p>
                     Recent work includes:
                     <ul>
-                        <li>AI Warehouse lead dev - producing videos, creating systems, tooling, agents, environments.</li>
+                        <li>AI Warehouse lead dev - producing videos, creating systems, tooling, agents, environments. I joined as the second employee other than the owner, and was responsible for all game development and systems architecture. This was an ongoing project that I joined.</li>
                     </ul>
                 </p>
             </div>
