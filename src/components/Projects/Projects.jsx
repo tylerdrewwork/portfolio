@@ -1,7 +1,33 @@
-import { useMemo } from 'react';
+import { useMemo, useState, useEffect, useRef } from 'react';
 import projectData from './projectData';
 import ProjectImageGallery from './ProjectImageGallery';
 import './Projects.scss';
+
+function StickyCategoryTitle({ children }) {
+    const [isStuck, setIsStuck] = useState(false);
+    const sentinelRef = useRef(null);
+
+    useEffect(() => {
+        const sentinel = sentinelRef.current;
+        if (!sentinel) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => setIsStuck(!entry.isIntersecting),
+            { threshold: 0, rootMargin: '-1px 0px 0px 0px' }
+        );
+        observer.observe(sentinel);
+        return () => observer.disconnect();
+    }, []);
+
+    return (
+        <>
+            <div ref={sentinelRef} className="project-category-title-sentinel" aria-hidden="true" />
+            <h2 className={`project-category-title ${isStuck ? 'is-stuck' : ''}`}>
+                {children}
+            </h2>
+        </>
+    );
+}
 
 function Projects() {
     // Group projects by category
@@ -19,15 +45,18 @@ function Projects() {
 
     // Category display names
     const categoryNames = {
-        'aiw': 'AI Warehouse',
-        'other': 'Other Work'
+        'aiw': 'AI Warehouse Projects',
+        'Other Professional': 'Other Professional Projects',
+        'Personal Projects': 'Personal Projects'
     };
 
     return (
         <section id="projects" className="projects-section">
             {Object.entries(groupedProjects).map(([category, projects]) => (
                 <div key={category} id={`section-${category}`} className="project-category-section">
-                    <h2 className="project-category-title">{categoryNames[category] || category}</h2>
+                    <StickyCategoryTitle>
+                        {categoryNames[category] || category}
+                    </StickyCategoryTitle>
                     <div className="project-category-group">
                     {projects.map((project, index) => {
                         // Create a unique ID from project name (slugified)
