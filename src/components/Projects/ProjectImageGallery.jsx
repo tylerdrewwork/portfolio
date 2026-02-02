@@ -65,14 +65,17 @@ function ProjectImageGallery({ images, projectName }) {
                             onClick={() => setEnlargedIndex(index)}
                             aria-label={`View ${item.caption || 'video'} full size`}
                         >
-                            <div className="gallery-tile-video">
-                                <iframe
-                                    src={`https://www.youtube.com/embed/${item.youtubeId}`}
-                                    title={item.caption || `Video ${index + 1}`}
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                    className="gallery-tile-video-iframe"
+                            <div className="gallery-tile-youtube-thumb">
+                                <img
+                                    src={`https://img.youtube.com/vi/${item.youtubeId}/maxresdefault.jpg`}
+                                    alt={item.caption || `Video ${index + 1}`}
+                                    className="gallery-tile-image"
+                                    loading="lazy"
+                                    onError={(e) => {
+                                        e.target.src = `https://img.youtube.com/vi/${item.youtubeId}/hqdefault.jpg`;
+                                    }}
                                 />
+                                <span className="gallery-tile-youtube-play" aria-hidden="true" />
                             </div>
                         </button>
                     ) : item.type === 'video' ? (
@@ -140,7 +143,7 @@ function ProjectImageGallery({ images, projectName }) {
                             <>
                                 <div className="gallery-lightbox-video-wrap">
                                     <iframe
-                                        src={`https://www.youtube.com/embed/${items[enlargedIndex].youtubeId}`}
+                                        src={`https://www.youtube.com/embed/${items[enlargedIndex].youtubeId}?autoplay=1`}
                                         title={items[enlargedIndex].caption || 'Video'}
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                         allowFullScreen

@@ -60,7 +60,21 @@ const projectData = [
         id: 6,
         category: 'Other Professional',
         projectName: 'WipeRecord: SalesForce-Stripe Connector',
-        description: 'Lead of this project. Bi-directional connector which syncs SalesForce and Stripe accounts and orders, in realtime. Built with JS, Node and Apex.',
+        description: 'Lead of this project. Bi-directional connector which syncs SalesForce and Stripe accounts and orders, in realtime. Built with JS, Node and Apex. ',
+        projectImages: []
+    },
+    {
+        id: 6,
+        category: 'Other Professional',
+        projectName: 'WipeRecord: Expungement Eligibility Test',
+        description: 'First project I worked on at WipeRecord. Refactored a complicated and intertwined logic tree with hundreds of nested if statements and user ending points to be more maintainable and easier to understand. Built in Javascript, Node.js.',
+        projectImages: []
+    },
+    {
+        id: 6,
+        category: 'Other Professional',
+        projectName: 'Motion Inference',
+        description: 'Experimented with and built Unity 3D components that predicted user intention by compositing "human confidence values". No ML, just data collection and processing. First professional position after graduating from UT Austin bootcamp. NDA.',
         projectImages: []
     },
     {
@@ -80,7 +94,9 @@ const projectData = [
         projectName: 'Game Jam: Infinity Money Glitch (2025)',
         description: 'Built in 4 days for GMTK 2025 in a team of 2. Abuse the system to print infinite money! Roguelike mechanics with inventory management. Built in Unity C#.',
         projectImages: [
-            {src: 'assets/images/projects/moneyglitch.gif', caption: 'Infinity Money Glitch', offsetX: 50, offsetY: 0},
+            {src: 'assets/images/projects/moneyglitch.gif', caption: 'Infinity Money Glitch (GMTK 2025)', offsetX: 50, offsetY: 0},
+            {type: 'youtube', youtubeId: 'S3t4doUekRk', caption: 'Unboxing Simulator (GMTK 2022)', offsetX: 50, offsetY: 0},
+            {}
             ]
     },
     {
