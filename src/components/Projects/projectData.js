@@ -68,7 +68,11 @@ const projectData = [
         category: 'Personal Projects',
         projectName: 'Ski Stunt Simulator (in development)',
         description: 'My ultimate passion project based on an old game from the early 2000s. After being inspired by the game, I reached out to the original creator Michiel van de Panne, who graciously gave me permission to build a modern version of the game based on the screenshots and videos I sent him. Articulated ragdoll physics, PID controllers, level design. Built in Unity C#.',
-        projectImages: []
+        projectImages: [
+            { src: 'assets/images/projects/skistunt1.png', caption: 'Ski Stunt Simulator' },
+            { src: 'assets/images/projects/skistunt2.png', caption: 'Ski Stunt Simulator' },
+            { src: 'assets/images/projects/skistunt_flip.gif', caption: 'Flip'},
+        ]
     },
     {
         id: 8,
@@ -84,7 +88,10 @@ const projectData = [
         category: 'Personal Projects',
         projectName: 'Backflip Master (2020)',
         description: '',
-        projectImages: []
+        projectImages: [
+            { src: 'assets/images/projects/backflipmaster1.mp4', caption: 'Backflip Master', offsetX: 50, offsetY: 0 },
+            { src: 'assets/images/projects/backflipmaster2.mp4', caption: 'Backflip Master', offsetX: 50, offsetY: 0 },
+        ]
     },
     {
         id: 9,

@@ -9,16 +9,23 @@ function getYoutubeId(value) {
     return m ? m[1] : (id.length === 11 ? id : null);
 }
 
+function isVideoSrc(src) {
+    if (!src || typeof src !== 'string') return false;
+    return /\.mp4$/i.test(src);
+}
+
 function normalizeItem(item) {
     if (typeof item === 'string') {
-        return { type: 'image', src: item, caption: '', offsetX: 0, offsetY: 0 };
+        const type = isVideoSrc(item) ? 'video' : 'image';
+        return { type, src: item, caption: '', offsetX: 0, offsetY: 0 };
     }
     if (item.type === 'youtube' || item.youtubeId) {
         const youtubeId = getYoutubeId(item.youtubeId);
         return youtubeId ? { type: 'youtube', youtubeId, caption: item.caption || '' } : null;
     }
+    const type = isVideoSrc(item.src) ? 'video' : 'image';
     return {
-        type: 'image',
+        type,
         src: item.src,
         caption: item.caption || '',
         offsetX: item.offsetX ?? 0,
@@ -68,6 +75,25 @@ function ProjectImageGallery({ images, projectName }) {
                                 />
                             </div>
                         </button>
+                    ) : item.type === 'video' ? (
+                        <button
+                            type="button"
+                            className="gallery-tile-trigger"
+                            onClick={() => setEnlargedIndex(index)}
+                            aria-label={`View ${item.caption || 'video'} full size`}
+                        >
+                            <video
+                                src={getAssetUrl(item.src)}
+                                className="gallery-tile-video-native"
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                                style={{
+                                    objectPosition: `${item.offsetX}% ${item.offsetY}%`
+                                }}
+                            />
+                        </button>
                     ) : (
                         <button
                             type="button"
@@ -98,7 +124,7 @@ function ProjectImageGallery({ images, projectName }) {
                     onClick={closeOverlay}
                     role="dialog"
                     aria-modal="true"
-                    aria-label={items[enlargedIndex].type === 'youtube' ? 'Enlarged video' : 'Enlarged image'}
+                    aria-label={items[enlargedIndex].type === 'youtube' || items[enlargedIndex].type === 'video' ? 'Enlarged video' : 'Enlarged image'}
                 >
                     <button
                         type="button"
@@ -119,6 +145,23 @@ function ProjectImageGallery({ images, projectName }) {
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                         allowFullScreen
                                         className="gallery-lightbox-video"
+                                    />
+                                </div>
+                                {items[enlargedIndex].caption && (
+                                    <p className="gallery-lightbox-caption">{items[enlargedIndex].caption}</p>
+                                )}
+                            </>
+                        ) : items[enlargedIndex].type === 'video' ? (
+                            <>
+                                <div className="gallery-lightbox-video-wrap">
+                                    <video
+                                        src={getAssetUrl(items[enlargedIndex].src)}
+                                        className="gallery-lightbox-video-native"
+                                        autoPlay
+                                        muted
+                                        loop
+                                        playsInline
+                                        controls
                                     />
                                 </div>
                                 {items[enlargedIndex].caption && (
