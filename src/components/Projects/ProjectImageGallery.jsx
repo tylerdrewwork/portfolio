@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { getAssetUrl } from '../../config';
 import './ProjectImageGallery.scss';
 
 function normalizeImage(item) {
@@ -45,7 +46,7 @@ function ProjectImageGallery({ images, projectName }) {
                         aria-label={`View ${item.caption || `image ${index + 1}`} full size`}
                     >
                         <img
-                            src={item.src}
+                            src={getAssetUrl(item.src)}
                             alt={item.caption || `${projectName} - Image ${index + 1}`}
                             className="gallery-tile-image"
                             style={{
@@ -79,7 +80,7 @@ function ProjectImageGallery({ images, projectName }) {
                         onClick={(e) => e.stopPropagation()}
                     >
                         <img
-                            src={items[enlargedIndex].src}
+                            src={getAssetUrl(items[enlargedIndex].src)}
                             alt={items[enlargedIndex].caption || `${projectName} - Image ${enlargedIndex + 1}`}
                             className="gallery-lightbox-image"
                         />

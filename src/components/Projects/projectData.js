@@ -6,10 +6,10 @@ const projectData = [
         projectName: 'AI Warehouse Humanoid Agents',
         description: 'Created all of the agents for AI Warehouse',
         projectImages: [
-            { src: '/public/assets/images/projects/ai-warehouse/tooling-1.png', caption: 'Tooling screenshot' },
-            { src: '/public/assets/images/projects/ai-warehouse/tooling-2.png', caption: 'Tooling overview' },
-            { src: '/public/assets/images/projects/ai-warehouse/agent-horse.png', caption: 'Agent Horse' },
-            { src: '/public/assets/images/projects/ai-warehouse/agent-pip.png', caption: 'Agent Pip' },
+            { src: 'assets/images/projects/ai-warehouse/tooling-1.png', caption: 'Tooling screenshot' },
+            { src: 'assets/images/projects/ai-warehouse/tooling-2.png', caption: 'Tooling overview' },
+            { src: 'assets/images/projects/ai-warehouse/agent-horse.png', caption: 'Agent Horse' },
+            { src: 'assets/images/projects/ai-warehouse/agent-pip.png', caption: 'Agent Pip' },
         ]
     },
     {
@@ -18,10 +18,10 @@ const projectData = [
         projectName: 'Mechanics, Systems, & Tools Creation',
         description: 'All of the mechanics, tooling and systems in the videos during my time at AI Warehouse were made by me. Tooling was made for the Game Development and Machine Learning teams on request and sometimes proactively if they agreed it would be helpful. Systems were made to help the Game Development team build environments faster and more efficiently.',
         projectImages: [
-            { src: '/public/assets/images/projects/ai-warehouse/gifs/agent muscles motion.gif', caption: 'Agent motion' },
-            { src: '/public/assets/images/projects/ai-warehouse/gifs/muscles.gif', caption: 'Muscle system' },
-            { src: '/public/assets/images/projects/ai-warehouse/agent muscles.png', caption: 'Agent rig' },
-            { src: '/public/assets/images/projects/ai-warehouse/maze-game-analytics.png', caption: 'Maze game analytics', offsetX: 0, offsetY: 0 },
+            { src: 'assets/images/projects/ai-warehouse/gifs/agent muscles motion.gif', caption: 'Agent motion' },
+            { src: 'assets/images/projects/ai-warehouse/gifs/muscles.gif', caption: 'Muscle system' },
+            { src: 'assets/images/projects/ai-warehouse/agent muscles.png', caption: 'Agent rig' },
+            { src: 'assets/images/projects/ai-warehouse/maze-game-analytics.png', caption: 'Maze game analytics', offsetX: 0, offsetY: 0 },
         ]
     },
     {

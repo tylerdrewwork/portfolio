@@ -1,3 +1,7 @@
+/** Prefix for GitHub Pages (and local build). Use for all public asset paths. */
+export const getAssetUrl = (path) =>
+    path ? import.meta.env.BASE_URL + path.replace(/^\//, '') : path;
+
 export const contactInfo = {
   fullname: 'Tyler Smith',
   firstname: 'Tyler',

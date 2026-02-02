@@ -3,8 +3,8 @@ const spinnerData = [
         id: 1,
         projectName: 'Highlight Project',
         description: 'Short description of a flagship project, outcome, or achievement.',
-        projectImage: '/public/assets/images/thumb-aiw.png',
-        thumbnailImage: '/public/assets/images/thumb-aiw.png'
+        projectImage: 'assets/images/thumb-aiw.png',
+        thumbnailImage: 'assets/images/thumb-aiw.png'
     },
     {
         id: 2,

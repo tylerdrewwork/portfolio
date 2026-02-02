@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import $ from 'jquery';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { getAssetUrl } from '../../config';
 import spinnerData from './spinnerData';
 import './Spinner.scss';
 
@@ -108,7 +109,7 @@ function Spinner() {
                     <article key={project.id} className="spinner-item">
                         <div 
                             className="spinner-image-placeholder" 
-                            data-image={project.thumbnailImage}
+                            data-image={getAssetUrl(project.thumbnailImage)}
                         >
                             Project {project.id}
                         </div>

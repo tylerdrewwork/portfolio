@@ -1,3 +1,4 @@
+import { getAssetUrl } from '../../config';
 import './Hero.scss';
 
 function Hero() {
@@ -11,8 +12,7 @@ function Hero() {
                     loop
                     playsInline
                 >
-                    {/* Replace this src with the path to your MP4 */}
-                    <source src="/public/assets/videos/hero_video.mp4" type="video/mp4" />
+                    <source src={getAssetUrl('assets/videos/hero_video.mp4')} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
                 <div className="hero-text-overlay">
