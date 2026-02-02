@@ -1,6 +1,6 @@
 .content-grid {
   display: grid;
-  grid-template-columns: .2fr 1fr .2fr;
+  grid-template-columns: .5fr 1fr .5fr;
   min-height: 100vh;
   box-sizing: border-box;
 }
@@ -22,9 +22,37 @@
   min-width: 0;
 }
 
+// Math-based width per resolution
 .content-panel-inner {
   width: 100%;
-  max-width: 640px;
+  box-sizing: border-box;
+  // Mobile: full width minus side padding
+  max-width: calc(100vw - 2rem);
+}
+
+@media (min-width: 640px) {
+  .content-panel-inner {
+    max-width: min(640px, calc(100vw - 3rem));
+  }
+}
+
+@media (min-width: 768px) {
+  .content-panel-inner {
+    max-width: min(720px, calc(100vw - 4rem));
+  }
+}
+
+// Two-column layout: limit width within content column
+@media (min-width: 969px) {
+  .content-panel-inner {
+    max-width: min(720px, calc(100vw - 280px - 4rem)); // viewport minus sidebar ~280px and gap/padding
+  }
+}
+
+@media (min-width: 1200px) {
+  .content-panel-inner {
+    max-width: min(1000px, calc(100vw - 320px - 5rem));
+  }
 }
 
 .section-header {
@@ -57,7 +85,7 @@
   }
 
   .content-panel-inner {
-    max-width: none;
+    max-width: calc(100vw - 3rem);
   }
 }
 
