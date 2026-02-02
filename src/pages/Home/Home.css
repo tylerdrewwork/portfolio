@@ -1,7 +1,7 @@
 .content-grid {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 4rem;
+  grid-template-columns: 0.5fr 1.5fr;
+  gap: 2rem;
   max-width: 1200px;
   margin: 0 auto 3rem auto;
   padding: 0 1.5rem;
@@ -11,6 +11,21 @@
   overflow-y: auto;
   max-height: calc(100vh - 4rem);
   min-height: 0;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+}
+.content-panel::-webkit-scrollbar {
+  width: 6px;
+}
+.content-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+.content-panel::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+.content-panel::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
 }
 
 .section-header {
