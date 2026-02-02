@@ -9,12 +9,16 @@ function Home() {
         <main className="main-content">
             {/* <Hero /> */}
             <div className="content-grid">
-                <About />
-                <div className="content-panel" data-content-panel>
-                    <Projects />
+                <aside className="content-sidebar">
+                    <About />
+                </aside>
+                <div className="content-panel">
+                    <div className="content-panel-inner">
+                        <Projects />
+                        <Contact />
+                    </div>
                 </div>
             </div>
-            <Contact />
         </main>
     );
 }   

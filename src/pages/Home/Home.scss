@@ -1,37 +1,30 @@
 .content-grid {
   display: grid;
-  grid-template-columns: 0.5fr 1.5fr;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto 3rem auto;
-  padding: 0 1.5rem;
+  grid-template-columns: .2fr 1fr .2fr;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
+// Left column: About + ToC — sticky; padding lives on the sidebar
+.content-sidebar {
+  position: sticky;
+  top: 2rem;
+  align-self: start;
+  height: fit-content;
+  min-width: 0;
+}
+
+// Right column: main content, centered with same padding context
 .content-panel {
-  overflow-y: auto;
-  max-height: calc(100vh - 4rem);
-  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+}
 
-  // Minimal custom scrollbar — matches dark theme (#020b18, white/gray accents)
-  scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
-
-  &::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 3px;
-
-    &:hover {
-      background: rgba(255, 255, 255, 0.35);
-    }
-  }
+.content-panel-inner {
+  width: 100%;
+  max-width: 640px;
 }
 
 .section-header {
@@ -52,16 +45,19 @@
   color: #c7d2e0;
 }
 
-// Tablet and below - stack columns; page scrolls as a whole
+// Tablet and below — stack columns; sidebar no longer sticky
 @media (max-width: 968px) {
   .content-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
 
-  .content-panel {
-    max-height: none;
-    overflow-y: visible;
+  .content-sidebar {
+    position: static;
+  }
+
+  .content-panel-inner {
+    max-width: none;
   }
 }
 

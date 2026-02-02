@@ -145,6 +145,7 @@ body {
   flex: 1;
   order: 1;
   min-height: calc(100vh - 200px);
+  justify-items: center;
 }
 
 .main-content > * {
