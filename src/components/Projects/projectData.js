@@ -14,7 +14,7 @@ const projectData = [
             { src: 'assets/images/projects/ai-warehouse/gifs/muscles.gif', caption: 'Testing the rotational constraints on the agent muscles (not muscle system)' },
             { src: 'assets/images/projects/ai-warehouse/videos/building mechanics soccer.mp4', caption: 'Building soccer mechanics and agent abilities', offsetX: 75, offsetY: 0 },
             { src: 'assets/images/projects/ai-warehouse/gifs/bike.gif', caption: 'Building the very complicated and hilarious bicycle mechanics', offsetX: 0, offsetY: 0 },
-            { src: 'assets/images/projects/ai-warehouse/odin validator.png', caption: 'Odin Validator, used to find and squash bugs in the scenes & assets quickly.' },
+            { src: 'assets/images/projects/ai-warehouse/odin validator.png', caption: 'Odin Validator. Built validations to find and squash bugs in the scenes & assets quickly.' },
             
             
         ]
@@ -41,7 +41,7 @@ const projectData = [
             { src: 'assets/images/projects/ai-warehouse/tooling-1.png', caption: 'Tooling to help debug during agent creation. Helps solve a lot of issues around Unity\'s joint constraints.' },
             { src: 'assets/images/projects/ai-warehouse/tooling-2.png', caption: 'Showing off more of the Humanoid Builder. You can also see the custom tools and gizmos as well as a master debug panel on the left side.' },
             { src: 'assets/images/projects/ai-warehouse/agent-horse.png', caption: 'Horse Agent' },
-            { src: 'assets/images/projects/ai-warehouse/agent-pip.png', caption: 'Pip! I love him.' },
+            { src: 'assets/images/projects/ai-warehouse/agent-pip.png', caption: 'Pip! I love him. Nothing too special about him. He\' just very cute.' },
         ],
     },
     {
