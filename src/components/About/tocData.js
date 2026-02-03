@@ -16,7 +16,7 @@ export const tocData = [
             { id: 'mechanics-tools', label: 'Mechanics & Tools' },
             { id: 'systems', label: 'Systems' },
             { id: 'humanoid-agents', label: 'Humanoid Agents' },
-            { id: 'ai-warehouse-community-games', label: 'AI Warehouse Community & Games!' }
+            { id: 'ai-warehouse-community-games', label: 'AIW Community & Games!' }
         ]
     },
     {
