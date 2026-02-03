@@ -5,7 +5,7 @@
 }
 
 html {
-  overflow-x: hidden;
+  overflow-x: clip; /* clip avoids breaking position: sticky (hidden would create scroll containment) */
 }
 
 body {
@@ -14,7 +14,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 b {
@@ -24,7 +24,7 @@ b {
 .app {
   min-height: 100vh;
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
   background-image: radial-gradient(circle, #052310, #072613, #0a2916, #0d2d18, #10301b);
   color: #000000;
   display: flex;
