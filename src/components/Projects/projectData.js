@@ -44,14 +44,14 @@ const projectData = [
         id: 4,
         category: 'aiw',
         projectName: 'AI Warehouse Community & Games!',
-        description: '<a href="https://aiwarehouse.itch.io/maze" target="_blank">CLICK TO GO TO THE AI WAREHOUSE MAZE GAME PAGE.</a> <b>Password is albert4ever</b>. </br> Volunteered to take initiative to grow the Discord community to an active 19k members through consistent updates and community engagement.',
+        description: '<a href="https://aiwarehouse.itch.io/maze" target="_blank">CLICK TO GO TO THE AI WAREHOUSE MAZE GAME PAGE.</a> <b>Password is albert4ever</b>. </br> Took the initiative to grow an active Discord community of 19k members through consistent updates and direct community engagement.',
         projectImages: [
+            { src: 'assets/images/projects/ai-warehouse/maze-game-analytics.png', caption: 'Escape The Maze analytics', offsetX: 0, offsetY: 0 },
+            { src: 'assets/images/projects/ai-warehouse/game1.png', caption: 'Escape The Maze lava' },
+            { src: 'assets/images/projects/ai-warehouse/game2.png', caption: 'Escape The Maze spikes' },
             { src: 'assets/images/projects/ai-warehouse/aiw community banner.png', caption: 'Community Banner for email blasts made out of user fan-art', offsetX: 10, offsetY: 0 },
-            { src: 'assets/images/projects/ai-warehouse/maze-game-analytics.png', caption: 'Maze game analytics', offsetX: 0, offsetY: 0 },
-            { src: 'assets/images/projects/ai-warehouse/game1.png', caption: 'Maze game lava' },
-            { src: 'assets/images/projects/ai-warehouse/game2.png', caption: 'Maze game spikes' },
             { src: 'assets/images/projects/ai-warehouse/discord_updates.png', caption: 'Growing the community through engagement!' },
-            { src: 'assets/images/projects/ai-warehouse/maze community.png', caption: 'Maze game speedrun forum!' },
+            { src: 'assets/images/projects/ai-warehouse/maze community.png', caption: 'People speedrunning Escape The Maze!' },
         ]
     },
     {
