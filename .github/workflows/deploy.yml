@@ -39,7 +39,7 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-        env:
+        env: 'tylerdrewwork.github.io/portfolio/'
           # Base path for assets. Must match your GitHub Pages URL.
           # Project site (username.github.io/portfolio-2026/): default is correct.
           # User/org site at root (username.github.io/): set to /
