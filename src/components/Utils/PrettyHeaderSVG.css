@@ -50,6 +50,10 @@
     opacity: 1;
   }
 }
+.pretty-header {
+  position: relative;
+}
+
 .pretty-header-root {
   width: 100%;
   height: 100%;
@@ -140,13 +144,14 @@
 .pretty-header-emoji-container {
   position: absolute;
   top: 0;
-  float: left;
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   pointer-events: none;
+  /* width set by JS to match .pretty-header-title-block */
 }
 
 .pretty-header-no-emoji .pretty-header-emoji-container {
@@ -156,7 +161,7 @@
 .pretty-header-emoji {
   position: relative;
   display: grid;
-  font-size: var(--pretty-header-emoji-size, clamp(2rem, 100vw, 80px));
+  font-size: var(--pretty-header-emoji-size, clamp(2rem, 15vw, 80px));
   margin: 0 clamp(8px, 4vw, 30px);
 }
 .pretty-header-emoji.left div {

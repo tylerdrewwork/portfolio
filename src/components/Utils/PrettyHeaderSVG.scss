@@ -29,7 +29,11 @@
     100% { opacity: 1; }
 }
 
-// Wrapper so inner content fills the SVG when it scales (height: auto)
+// Outer responsive container (replaces former SVG wrapper)
+.pretty-header {
+    position: relative;
+}
+
 .pretty-header-root {
     width: 100%;
     height: 100%;
@@ -48,9 +52,6 @@
     width: 100%;
     height: 100%;
     min-height: 0;
-    // background: linear-gradient(-45deg, #fc5c7d, #6a82fb, #05dfd7);
-    // background-size: 600% 400%;
-    // animation: prettyHeaderGradient 10s ease infinite;
     border-radius: 10px;
     color: white;
     text-align: center;
@@ -129,16 +130,19 @@
     }
 }
 
+
+
 .pretty-header-emoji-container {
     position: absolute;
     top: 0;
-    float: left;
-    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     pointer-events: none;
+    /* width set by JS to match .pretty-header-title-block */
 }
 
 .pretty-header-no-emoji .pretty-header-emoji-container {
@@ -148,7 +152,7 @@
 .pretty-header-emoji {
     position: relative;
     display: grid;
-    font-size: var(--pretty-header-emoji-size, clamp(2rem, 100vw, 80px));
+    font-size: var(--pretty-header-emoji-size, clamp(2rem, 15vw, 80px));
     margin: 0 clamp(8px, 4vw, 30px);
 
     &.left div {

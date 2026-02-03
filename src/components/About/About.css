@@ -41,6 +41,10 @@
   line-height: 1.2;
 }
 
+.about-name-svg {
+  align-self: center;
+}
+
 .about-bio {
   display: flex;
   flex-direction: column;

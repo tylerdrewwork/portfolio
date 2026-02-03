@@ -43,29 +43,30 @@ function AboutLinks({ layout = 'column', className = '' }) {
                     {GITHUB_ICON}
                 </a>
             </div>
-            <PrettyHeaderSVG 
+            {/* <PrettyHeaderSVG 
                 title="Download Resume" 
-                subtitle="" 
+                subtitle="or" 
                 showEmoji={false} 
                 fontSize="4rem" 
                 animationSpeed={6} 
                 animationAmount={10} 
                 titleTracers={true}
-            />
+            /> */}
+            {/* <a href={resume} target="_blank" rel="noopener noreferrer"><h1>Download Resume</h1></a> */}
             <div className="about-links-email-block">
                 <PrettyHeaderSVG
                     title="Email Me"
-                    subtitle=""
+                    subtitle="tylerdrew.work@gmail.com"
                     showEmoji={false}
-                    fontSize="4rem"
+                    fontSize="1.25rem"
                     animationSpeed={6}
                     animationAmount={10}
                     titleTracers={true}
                 />
                 <SecretButton
                     onClick={copyEmail}
-                    alwaysShowOnMobile
-                    proximity={140}
+                    alwaysShowOnMobile={true}
+                    proximity={40}
                     className="about-link about-link-copy"
                 >
                     {copyLabel}
