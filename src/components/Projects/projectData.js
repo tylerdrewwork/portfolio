@@ -6,8 +6,8 @@ const projectData = [
     {
         id: 2,
         category: 'aiw',
-        projectName: 'Mechanics, Systems, & Tools Creation',
-        description: 'I created all of the agent\'s abilities and the video\'s mechanics that you see in the videos, along with the tooling and systems you don\'t see in the videos! I\'m very proud of the work I did here. <br /><br />Tooling was made for the Game Development and Machine Learning teams on request and sometimes proactively if they agreed it would be helpful. Systems were made to help the Game Development team build environments faster and more efficiently. There were also many other systems created to fulfill the needs of the current production (video).',
+        projectName: 'Mechanics & Tools',
+        description: 'I created all of the agent\'s abilities and the video\'s mechanics that you see in the videos, along with the tooling and systems you don\'t see in the videos! I\'m very proud of the work I did here. <br /><br />Tooling was made for the Game Development and Machine Learning teams on request and sometimes proactively if they agreed it would be helpful.',
         projectImages: [
             { src: 'assets/images/projects/ai-warehouse/videos/muscle humanoid.mp4', caption: 'Agent muscle system, using realistic muscle simulation to move the agents more realistically.' },
             { src: 'assets/images/projects/ai-warehouse/gifs/agent muscles motion.gif', caption: 'Agent muscle motion' },
@@ -15,8 +15,20 @@ const projectData = [
             { src: 'assets/images/projects/ai-warehouse/videos/building mechanics soccer.mp4', caption: 'Building soccer mechanics and agent abilities', offsetX: 75, offsetY: 0 },
             { src: 'assets/images/projects/ai-warehouse/gifs/bike.gif', caption: 'Building the very complicated and hilarious bicycle mechanics', offsetX: 0, offsetY: 0 },
             { src: 'assets/images/projects/ai-warehouse/odin validator.png', caption: 'Odin Validator, used to find and squash bugs in the scenes & assets quickly.' },
+            
+            
+        ]
+    },
+    {
+        id: 2,
+        category: 'aiw',
+        projectName: 'Systems',
+        description: 'Systems were made to help the Game Development team build environments faster and more efficiently. There were also many other systems created to fulfill the needs of the current production (video).',
+        projectImages: [
+            { src: 'assets/images/projects/ai-warehouse/videos/using replay system.mp4', caption: 'REPLAY SYSTEM: Full support for recording and replaying state of objects in scene. With optimizations for performance and storage. Here I am using the replay system to record and replay the state of objects in the scene.' },
+            { src: 'assets/images/projects/ai-warehouse/replaydata.png', caption: 'Example of the scriptable object used to store replay data.' },
+            { src: 'assets/images/projects/ai-warehouse/roomphases.png', caption: 'ROOM PHASES SYSTEM: My first project here, this large and complex observer system allowed us to create more complex environments by using events that are raised based on the room phase.' },
             { src: 'assets/images/projects/ai-warehouse/documentation.png', caption: 'DOCUMENTATION: Maintained the documentation of our systems, here\'s an example.' },
-            { src: 'assets/images/projects/ai-warehouse/roomphases.png', caption: 'ROOM PHASES SYSTEM: My first project here, this large system allowed us to create more complex environments where events could be raised based on the room phase.' },
         ]
     },
     {
@@ -31,16 +43,6 @@ const projectData = [
             { src: 'assets/images/projects/ai-warehouse/agent-horse.png', caption: 'Horse Agent' },
             { src: 'assets/images/projects/ai-warehouse/agent-pip.png', caption: 'Pip! I love him.' },
         ],
-    },
-    {
-        id: 2,
-        category: 'aiw',
-        projectName: 'Replay System',
-        description: 'Full support for recording and replaying state of objects in scene. With optimizations for performance and storage.',
-        projectImages: [
-            { src: 'assets/images/projects/ai-warehouse/videos/using replay system.mp4', caption: 'Using the replay system to record and replay the state of objects in the scene.' },
-            { src: 'assets/images/projects/ai-warehouse/replaydata.png', caption: 'Example of the scriptable object used to store replay data.' },
-        ]
     },
     {
         id: 4,
