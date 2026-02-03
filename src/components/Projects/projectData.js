@@ -50,6 +50,7 @@ const projectData = [
         projectName: 'AI Warehouse Community & Games!',
         description: '<a href="https://aiwarehouse.itch.io/maze" target="_blank">CLICK TO GO TO THE AI WAREHOUSE MAZE GAME PAGE.</a> <b>Password is albert4ever</b>. </br> Took the initiative to grow an active Discord community of 19k total members through consistent updates and direct community engagement.',
         projectImages: [
+            { src: 'public/assets/images/projects/ai-warehouse/alsim.png', caption: 'Helped direct a 2D AI Simulator collaboration with University of Toronto MIST. Here we are testing the agents in the AI Simulator.', offsetX: 75, offsetY: 0 },
             { src: 'assets/images/projects/ai-warehouse/maze-game-analytics.png', caption: 'Escape The Maze analytics', offsetX: 0, offsetY: 0 },
             { src: 'assets/images/projects/ai-warehouse/game1.png', caption: 'Escape The Maze lava' },
             { src: 'assets/images/projects/ai-warehouse/game2.png', caption: 'Escape The Maze spikes' },
