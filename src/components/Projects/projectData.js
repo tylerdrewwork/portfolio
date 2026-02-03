@@ -15,6 +15,8 @@ const projectData = [
             { src: 'assets/images/projects/ai-warehouse/videos/building mechanics soccer.mp4', caption: 'Building soccer mechanics and agent abilities', offsetX: 75, offsetY: 0 },
             { src: 'assets/images/projects/ai-warehouse/gifs/bike.gif', caption: 'Building the very complicated and hilarious bicycle mechanics', offsetX: 0, offsetY: 0 },
             { src: 'assets/images/projects/ai-warehouse/odin validator.png', caption: 'Odin Validator, used to find and squash bugs in the scenes & assets quickly.' },
+            { src: 'assets/images/projects/ai-warehouse/documentation.png', caption: 'DOCUMENTATION: Maintained the documentation of our systems, here\'s an example.' },
+            { src: 'assets/images/projects/ai-warehouse/roomphases.png', caption: 'ROOM PHASES SYSTEM: My first project here, this large system allowed us to create more complex environments where events could be raised based on the room phase.' },
         ]
     },
     {

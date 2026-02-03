@@ -6,7 +6,12 @@ import AnimatedText from '../Utils/AnimatedText';
 function AboutIntro() {
     return (
         <section className="about-intro">
-            <PrettyHeaderSVG className="about-name-svg" title="Hi! I'm Tyler Smith" subtitle="" />
+            <PrettyHeaderSVG
+                className="about-name-svg"
+                title="Hi! I'm Tyler Smith"
+                subtitle=""
+                emojiPool={['🏆', '😌', '😲', '🤠', '🙀', '🐈‍⬛', '👨‍💻', '🧙', '🤹‍♂️', '🎊', '🎩', '🔊', '🎧', '🎙️', '🎹']}
+            />
             <div className="about-bio">
                  <p style={{ textAlign: 'center' , fontSize: '1.25rem' , fontWeight: '600' }}>
                     Developing for 10 years in Unity C#, and 4+ years professionally
