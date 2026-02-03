@@ -5,21 +5,17 @@ import PrettyHeaderSVG from '../Utils/PrettyHeaderSVG';
 function AboutIntro() {
     return (
         <section className="about-intro">
-            <PrettyHeaderSVG className="about-name-svg" title="Hi! I'm Tyler Smith" />
+            <PrettyHeaderSVG className="about-name-svg" title="Hi! I'm Tyler Smith" subtitle="" />
             <div className="about-bio">
-                <p>
+                 <p style={{ textAlign: 'center' , fontSize: '1.25rem' , fontWeight: '600' }}>
                     Developing for 10 years in Unity C#, and 4+ years professionally.
                 </p>
                 <p>
-                    My strengths are in game design, development, and systems architecture.
-                    I LOVE building games, toys, tools, and experiences that people can enjoy or learn from. I especially have a strong passion for physics and simulation games.
+                    I LOVE building games, toys, tools, and community-engaging experiences that people can enjoy or learn from. 
+                    I have an especially strong passion for physics and simulation games, which can be seen very apparently below in my projects.
                 </p>
                 <p>
-                    Recent work includes:
-                    <br />
-                    AI Warehouse, lead dev - producing videos, creating systems, tooling, agents, environments. Responsible for architecture of mechanics and systems.
-                    <br />
-                    WipeRecord, lead dev - built tools for sales team, paralegal team, and our client base. 
+                    My recent work includes <b>AI Warehouse</b>, where I led the game development of videos, architected systems, tooling, agents, video mechanics, and environments. I helped drive over 60 million views and brought over 15k members into our Discord community!! I take a lot of pride in our videos and the amazing community we have.
                 </p>
             </div>
             <AboutLinks className="about-links-intro" />
