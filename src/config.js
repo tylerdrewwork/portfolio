@@ -14,7 +14,7 @@ export const contactInfo = {
   website: 'https://yourwebsite.com',
   linkedin: 'https://www.linkedin.com/in/tyler-smith-atx/',
   github: 'https://github.com/tylerdrewwork',
-  twitter: 'https://twitter.com/yourhandle',
+  resume: '#', // Replace with your resume PDF URL
   yearsExperience: 4,
   openToWork: true,
 };

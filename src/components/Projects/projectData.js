@@ -78,26 +78,25 @@ const projectData = [
         projectImages: []
     },
     {
+        id: 8,
+        category: 'Personal Projects',
+        projectName: 'Tutorials',
+        description: 'Built in 4 days for GMTK 2025 in a team of 2. Abuse the system to print infinite money! Roguelike mechanics with inventory management. Built in Unity C#.',
+        projectImages: [
+            {type: 'youtube', youtubeId: 'QSO4xjtzOl4', caption: 'Icon Kino, a coding tutorial channel I would like to continue in the future', offsetX: 50, offsetY: 0},
+
+            ]
+    },
+    {
         id: 7,
         category: 'Personal Projects',
         projectName: 'Ski Stunt Simulator (in development)',
-        description: 'My ultimate passion project based on an old game from the early 2000s. After being inspired by the game, I reached out to the original creator Michiel van de Panne, who graciously gave me permission to build a modern version of the game based on the screenshots and videos I sent him. Articulated ragdoll physics, PID controllers, level design. Built in Unity C#.',
+        description: 'My ultimate passion project based on an old game from the early 2000s. After being inspired by the game, I reached out to the original creator and UBC Professor Michiel van de Panne, who graciously gave me permission to build a modern version of the game based on the screenshots and videos I sent him. Articulated ragdoll physics, PID controllers, level design. Built in Unity C#.',
         projectImages: [
             { src: 'assets/images/projects/skistunt1.png', caption: 'Ski Stunt Simulator' },
             { src: 'assets/images/projects/skistunt2.png', caption: 'Ski Stunt Simulator' },
             { src: 'assets/images/projects/skistunt_flip.gif', caption: 'Flip'},
         ]
-    },
-    {
-        id: 8,
-        category: 'Personal Projects',
-        projectName: 'Game Jam: Infinity Money Glitch (2025)',
-        description: 'Built in 4 days for GMTK 2025 in a team of 2. Abuse the system to print infinite money! Roguelike mechanics with inventory management. Built in Unity C#.',
-        projectImages: [
-            {src: 'assets/images/projects/moneyglitch.gif', caption: 'Infinity Money Glitch (GMTK 2025)', offsetX: 50, offsetY: 0},
-            {type: 'youtube', youtubeId: 'S3t4doUekRk', caption: 'Unboxing Simulator (GMTK 2022)', offsetX: 50, offsetY: 0},
-            {}
-            ]
     },
     {
         id: 10,
@@ -114,7 +113,21 @@ const projectData = [
         category: 'Personal Projects',
         projectName: 'PBAB - Physics Based Arena Brawler (2018)',
         description: 'My first large project. A top-down physics based arena brawler, which was very fun to build and focused on unique mouse controlled gameplay. It taught me a lot about scope and planning. Unity C#',
-        projectImages: ['assets/images/projects/pbab.png']
+        projectImages: ['assets/images/projects/pbab.png'
+            , { type: 'youtube', youtubeId: 'iwSDHCeKnDw', caption: 'PBAB - Physics Based Arena Brawler (2018)' },
+        ]
+    },
+    {
+        id: 8,
+        category: 'Personal Projects',
+        projectName: 'Game Jams',
+        description: 'Built in 4 days for GMTK 2025 in a team of 2. Abuse the system to print infinite money! Roguelike mechanics with inventory management. Built in Unity C#.',
+        projectImages: [
+            {src: 'assets/images/projects/moneyglitch.gif', caption: 'Infinity Money Glitch (GMTK 2025)', offsetX: 50, offsetY: 0},
+            {type: 'youtube', youtubeId: 'S3t4doUekRk', caption: 'Unboxing Simulator (GMTK 2022)', offsetX: 50, offsetY: 0},
+            {src: 'assets/images/projects/meteor.png', caption: 'Meteor (GMTK 2021)', offsetX: 0, offsetY: 0},
+            {src: 'assets/images/projects/deepcore.jpg', caption: 'Deepcore (SCREAM LITE 2020)', offsetX: 0, offsetY: 0},
+            ]
     },
     // https://www.youtube.com/watch?v=QSO4xjtzOl4
 ];

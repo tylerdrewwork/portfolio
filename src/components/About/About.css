@@ -52,6 +52,31 @@
   margin-top: 0.5rem;
 }
 
+.about-links-icons {
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem 1rem;
+  align-items: center;
+}
+
+.about-link-icon {
+  display: inline-flex;
+  color: #d1d5db;
+  transition: color 0.2s ease;
+}
+.about-link-icon:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+.about-link-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.about-link-resume {
+  margin-top: 0.25rem;
+}
+
 .about-links-row {
   flex-direction: row;
   flex-wrap: wrap;
