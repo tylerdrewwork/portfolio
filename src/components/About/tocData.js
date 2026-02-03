@@ -13,19 +13,36 @@ export const tocData = [
         id: 'section-aiw',
         label: 'AI Warehouse',
         children: [
-            { id: 'ai-warehouse-humanoid-agents', label: 'Agents' },
-            { id: 'muscle-system', label: 'Muscle System' },
-            { id: 'replay-system', label: 'Replay System' },
-            { id: 'unit-tests-automation', label: 'Unit Tests & Automation' },
-            { id: 'ai-warehouse-community-games', label: 'AI Warehouse Community Games!' }
+            { id: 'mechanics-tools', label: 'Mechanics & Tools' },
+            { id: 'systems', label: 'Systems' },
+            { id: 'humanoid-agents', label: 'Humanoid Agents' },
+            { id: 'ai-warehouse-community-games', label: 'AI Warehouse Community & Games!' }
         ]
     },
     {
-        id: 'section-other',
-        label: 'Other Work',
+        id: 'section-Other Professional',
+        label: 'Other Professional',
         children: [
-            { id: 'example-1', label: 'Example 1' },
-            { id: 'example-2', label: 'Example 2a' }
+            { id: 'wiperecord-salesforce-stripe-connector', label: 'WipeRecord: SalesForce-Stripe Connector' },
+            { id: 'wiperecord-expungement-eligibility-test', label: 'WipeRecord: Expungement Eligibility Test' },
+            { id: 'project-motion-intent-inference', label: 'Project Motion: Intent Inference' }
+        ]
+    },
+    {
+        id: 'section-Personal Projects',
+        label: 'Personal Projects',
+        children: [
+            { id: 'ski-stunt-simulator-in-development', label: 'Ski Stunt Simulator (in development)' },
+            { id: 'backflip-master-2020', label: 'Backflip Master (2020)' },
+            { id: 'pbab-physics-based-arena-brawler-2018', label: 'PBAB - Physics Based Arena Brawler (2018)' },
+            { id: 'game-jams', label: 'Game Jams' }
+        ]
+    },
+    {
+        id: 'section-... Other Things',
+        label: '... Other Things',
+        children: [
+            { id: 'tutorials-talks', label: 'Tutorials & Talks' }
         ]
     }
 ];
