@@ -7,13 +7,17 @@
 }
 .about-section #aiw-fx-1,
 .about-intro #aiw-fx-1 {
-  text-shadow: 0 0 15px #FD7315;
+  text-shadow: 1px 0 15px #FD7315, 0 0 10px #FD7315;
   font-weight: 800;
 }
 .about-section #aiw-fx-2,
 .about-intro #aiw-fx-2 {
-  text-shadow: 0 0 15px #005EFF;
+  text-shadow: 2px 0 15px #005EFF;
   font-weight: 800;
+}
+.about-section svg,
+.about-intro svg {
+  align-self: center;
 }
 
 .about-section-toc {

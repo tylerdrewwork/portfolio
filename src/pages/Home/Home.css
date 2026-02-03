@@ -74,6 +74,7 @@
   }
 
   .content-sidebar {
+    display: none;
     position: static;
   }
 
