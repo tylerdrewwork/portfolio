@@ -43,7 +43,7 @@ function AboutLinks({ layout = 'column', className = '' }) {
         window.open(resume, '_blank', 'noopener,noreferrer');
         const a = document.createElement('a');
         a.href = resume;
-        a.download = 'Tyler_Smith_Resume.pdf';
+        a.download = 'Tyler_Smith_Experienced_C#_Engineer.pdf';
         a.rel = 'noopener noreferrer';
         document.body.appendChild(a);
         a.click();
