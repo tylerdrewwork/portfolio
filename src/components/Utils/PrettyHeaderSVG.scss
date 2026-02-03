@@ -29,6 +29,13 @@
     100% { opacity: 1; }
 }
 
+// Wrapper so inner content fills the SVG when it scales (height: auto)
+.pretty-header-root {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+}
+
 .pretty-header-container {
     position: relative;
     font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -39,7 +46,8 @@
     justify-content: center;
     margin: 0;
     width: 100%;
-    height: var(--pretty-header-height, 140px);
+    height: 100%;
+    min-height: 0;
     // background: linear-gradient(-45deg, #fc5c7d, #6a82fb, #05dfd7);
     // background-size: 600% 400%;
     // animation: prettyHeaderGradient 10s ease infinite;
@@ -48,14 +56,19 @@
     text-align: center;
 
     h1 {
-        font-size: 40px;
+        font-size: clamp(1.25rem, 5vw, 40px);
+
+        @media (max-width: 768px) {
+        font-size: clamp(1.25rem, 50vw, 60px);
+        }
+
         z-index: 5;
         margin: 0;
         line-height: 1.3;
-        letter-spacing: 5px;
+        letter-spacing: clamp(2px, 1vw, 5px);
         text-transform: uppercase;
-        text-shadow: 0 1px 0 #efefef, 0 2px 0 #efefef, 0 3px 0 #efefef, 0 4px 0 #efefef, 0 12px 5px rgba(0, 0, 0, 0.1);
-        animation: prettyHeaderRotate ease-in-out 1s infinite alternate;
+        text-shadow: 0 1px 0 #efefef, 0 2px 0 #efefef, 0 3px 0 #efefef, 0 4px 0 #efefef, 0 12px 5px rgba(0, 0, 0, 0.9);
+        animation: prettyHeaderRotate ease-in-out 10s infinite alternate;
     }
 
     p {
@@ -73,7 +86,7 @@
 .pretty-header-emoji-container {
     position: absolute;
     top: 0;
-    left: 0;
+    float: left;
     width: 100%;
     height: 100%;
     display: flex;
@@ -85,8 +98,8 @@
 .pretty-header-emoji {
     position: relative;
     display: grid;
-    font-size: 80px;
-    margin: 0 30px;
+    font-size: clamp(2rem, 100vw, 80px);
+    margin: 0 clamp(8px, 4vw, 30px);
 
     &.left div {
         animation-direction: alternate;
@@ -99,6 +112,10 @@
     div {
         grid-column: 1;
         grid-row: 1;
+    }
+
+    @media (max-width: 768px) {
+        display: none;
     }
 }
 

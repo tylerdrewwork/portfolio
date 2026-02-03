@@ -21,17 +21,14 @@ function PrettyHeaderSVG({
             fill="none"
             viewBox={viewBox}
             width="100%"
-            height={height}
+            height="auto"
             xmlns="http://www.w3.org/2000/svg"
             className={className}
             style={{ maxWidth: width, display: 'block' }}
         >
             <foreignObject width="100%" height="100%">
-                <div xmlns="http://www.w3.org/1999/xhtml">
-                    <div
-                        className="pretty-header-container"
-                        style={{ '--pretty-header-height': `${height}px` }}
-                    >
+                <div xmlns="http://www.w3.org/1999/xhtml" className="pretty-header-root">
+                    <div className="pretty-header-container">
                         <h1>{title}</h1>
                         <p>{subtitle}</p>
                         <div className="pretty-header-emoji-container">
