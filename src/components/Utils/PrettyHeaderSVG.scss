@@ -72,7 +72,7 @@
         animation: prettyHeaderRotate ease-in-out calc(10s / var(--pretty-header-speed, 1)) infinite alternate;
     }
 
-    // Title tracers: stacked layers with stagger delay (like emoji)
+    // Title: h1 is main text (stagger-0); only the spans have .pretty-header-title-tracer and use text-shadow + stagger for the trail.
     .pretty-header-title-wrap {
         display: grid;
         margin: 0;
@@ -83,6 +83,8 @@
         }
     }
 
+    // Shared title look for main h1 and tracer spans (tracers override text-shadow when rainbow)
+    .pretty-header-title-stagger-0,
     .pretty-header-title-tracer {
         font-size: var(--pretty-header-font-size, clamp(1.25rem, 5vw, 40px));
 
@@ -104,18 +106,25 @@
         opacity: 1;
     }
 
-    .pretty-header-title-stagger-1 {
-        animation: prettyHeaderRotate ease-in-out calc(10s / var(--pretty-header-speed, 1)) infinite alternate;
-        animation-delay: 250ms;
-        z-index: 2;
-        opacity: min(1, calc(0.5 * var(--pretty-header-tracer-opacity, 1)));
+    $title-opacities: 0.5, 0.2, 0.12, 0.08, 0.05, 0.03;
+    @for $i from 1 through 6 {
+        .pretty-header-title-stagger-#{$i} {
+            --pretty-header-amount: var(--pretty-header-tracer-amount, var(--pretty-header-amount, 1));
+            animation: prettyHeaderRotate ease-in-out calc(10s / var(--pretty-header-speed, 1)) infinite alternate;
+            animation-delay: calc(var(--pretty-header-tracer-delay, 250) * #{$i} * 1ms);
+            z-index: #{3 - $i};
+            opacity: min(1, calc(#{nth($title-opacities, $i)} * var(--pretty-header-tracer-opacity, 1)));
+        }
     }
 
-    .pretty-header-title-stagger-2 {
-        animation: prettyHeaderRotate ease-in-out calc(10s / var(--pretty-header-speed, 1)) infinite alternate;
-        animation-delay: 500ms;
-        z-index: 1;
-        opacity: min(1, calc(0.2 * var(--pretty-header-tracer-opacity, 1)));
+    // Rainbow: only the spans under .pretty-header-title-wrap get the rainbow class (1–6 tracer layers)
+    $rainbow-colors: (#f97316 #c2410c, #0ea5e9 #0369a1, #22c55e #15803d, #a855f7 #7c3aed, #eab308 #ca8a04, #ec4899 #be185d);
+    @for $i from 1 through 6 {
+        .pretty-header-title-wrap .pretty-header-title-tracer.pretty-header-tracer-rainbow.pretty-header-title-stagger-#{$i} {
+            $pair: nth($rainbow-colors, $i);
+            color: nth($pair, 1);
+            text-shadow: 0 1px 0 nth($pair, 2), 0 2px 0 nth($pair, 2), 0 3px 0 nth($pair, 2), 0 4px 0 nth($pair, 2), 0 12px 5px rgba(0, 0, 0, 0.9);
+        }
     }
 
     p {
@@ -179,16 +188,20 @@
     z-index: 3;
 }
 
-.pretty-header-stagger-1 {
-    animation: prettyHeaderRotateMore ease-in-out calc(2s / var(--pretty-header-speed, 1)) infinite alternate;
-    animation-delay: 250ms;
-    z-index: 2;
-    opacity: min(1, calc(0.5 * var(--pretty-header-tracer-opacity, 1)));
+$emoji-opacities: 0.5, 0.2, 0.12, 0.08, 0.05, 0.03;
+@for $i from 1 through 6 {
+    .pretty-header-stagger-#{$i} {
+        --pretty-header-amount: var(--pretty-header-tracer-amount, var(--pretty-header-amount, 1));
+        animation: #{if($i == 1, prettyHeaderRotateMore, prettyHeaderRotateMost)} ease-in-out calc(2s / var(--pretty-header-speed, 1)) infinite alternate;
+        animation-delay: calc(var(--pretty-header-tracer-delay, 250) * #{$i} * 1ms);
+        z-index: #{3 - $i};
+        opacity: min(1, calc(#{nth($emoji-opacities, $i)} * var(--pretty-header-tracer-opacity, 1)));
+    }
 }
 
-.pretty-header-stagger-2 {
-    animation: prettyHeaderRotateMost ease-in-out calc(2s / var(--pretty-header-speed, 1)) infinite alternate;
-    animation-delay: 500ms;
-    z-index: 1;
-    opacity: min(1, calc(0.2 * var(--pretty-header-tracer-opacity, 1)));
+$emoji-rainbow-shadows: #c2410c, #0369a1, #15803d, #7c3aed, #ca8a04, #be185d;
+@for $i from 1 through 6 {
+    .pretty-header-rainbow-tracers .pretty-header-stagger-#{$i} {
+        filter: drop-shadow(0 1px 0 nth($emoji-rainbow-shadows, $i)) drop-shadow(0 2px 0 nth($emoji-rainbow-shadows, $i)) drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4));
+    }
 }

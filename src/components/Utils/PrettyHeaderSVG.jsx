@@ -20,6 +20,10 @@ function PrettyHeaderSVG({
     emojiPool,
     showEmoji = true,
     titleTracers = false,
+    tracerCount = 2,
+    tracerDelay = 250,
+    tracerAnimationAmount,
+    rainbowTracers = false,
     tracerOpacity = 1,
     fontSize,
     animationSpeed = 1,
@@ -37,6 +41,8 @@ function PrettyHeaderSVG({
 
     const left = chosenEmoji ?? leftEmoji;
     const right = chosenEmoji ?? rightEmoji;
+
+    const numTracers = Math.max(1, Math.min(6, Math.floor(Number(tracerCount)) || 2));
 
     const titleBlockRef = useRef(null);
     const emojiContainerRef = useRef(null);
@@ -68,6 +74,8 @@ function PrettyHeaderSVG({
         ...(animationSpeed != null && { '--pretty-header-speed': Number(animationSpeed) }),
         ...(animationAmount != null && { '--pretty-header-amount': Number(animationAmount) }),
         ...(tracerOpacity != null && { '--pretty-header-tracer-opacity': Number(tracerOpacity) }),
+        ...(tracerDelay != null && { '--pretty-header-tracer-delay': Number(tracerDelay) }),
+        ...(tracerAnimationAmount != null && { '--pretty-header-tracer-amount': Number(tracerAnimationAmount) }),
     };
 
     return (
@@ -81,16 +89,24 @@ function PrettyHeaderSVG({
             }}
         >
             <div
-                className={`pretty-header-root${showEmoji ? '' : ' pretty-header-no-emoji'}${titleTracers ? ' pretty-header-title-tracers' : ''}`}
+                className={`pretty-header-root${showEmoji ? '' : ' pretty-header-no-emoji'}${titleTracers ? ' pretty-header-title-tracers' : ''}${rainbowTracers ? ' pretty-header-rainbow-tracers' : ''}`}
                 style={Object.keys(rootStyle).length ? rootStyle : undefined}
             >
                 <div className="pretty-header-container">
                     <div ref={titleBlockRef} className="pretty-header-title-block">
                         {titleTracers ? (
                             <div className="pretty-header-title-wrap">
-                                <h1 className="pretty-header-title-tracer pretty-header-title-stagger-0">{title}</h1>
-                                <span className="pretty-header-title-tracer pretty-header-title-stagger-1" aria-hidden="true">{title}</span>
-                                <span className="pretty-header-title-tracer pretty-header-title-stagger-2" aria-hidden="true">{title}</span>
+                                {/* h1 is the main text in front; only the spans are tracers (they use text-shadow and stagger for the trail effect). */}
+                                <h1 className="pretty-header-title-stagger-0">{title}</h1>
+                                {[...Array(numTracers)].map((_, i) => (
+                                    <span
+                                        key={i}
+                                        className={`pretty-header-title-tracer pretty-header-title-stagger-${i + 1}${rainbowTracers ? ' pretty-header-tracer-rainbow' : ''}`}
+                                        aria-hidden="true"
+                                    >
+                                        {title}
+                                    </span>
+                                ))}
                             </div>
                         ) : (
                             <h1>{title}</h1>
@@ -100,13 +116,15 @@ function PrettyHeaderSVG({
                     <div ref={emojiContainerRef} className="pretty-header-emoji-container">
                         <div className="pretty-header-emoji left">
                             <div className="pretty-header-stagger-0">{left}</div>
-                            <div className="pretty-header-stagger-1">{left}</div>
-                            <div className="pretty-header-stagger-2">{left}</div>
+                            {[...Array(numTracers)].map((_, i) => (
+                                <div key={i} className={`pretty-header-stagger-${i + 1}`}>{left}</div>
+                            ))}
                         </div>
                         <div className="pretty-header-emoji right">
                             <div className="pretty-header-stagger-0">{right}</div>
-                            <div className="pretty-header-stagger-1">{right}</div>
-                            <div className="pretty-header-stagger-2">{right}</div>
+                            {[...Array(numTracers)].map((_, i) => (
+                                <div key={i} className={`pretty-header-stagger-${i + 1}`}>{right}</div>
+                            ))}
                         </div>
                     </div>
                 </div>

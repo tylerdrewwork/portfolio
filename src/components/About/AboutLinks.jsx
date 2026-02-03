@@ -55,6 +55,10 @@ function AboutLinks({ layout = 'column', className = '' }) {
                     animationSpeed={6}
                     animationAmount={10}
                     titleTracers={true}
+                    rainbowTracers={true}
+                    tracerCount={3}
+                    tracerDelay={150}
+                    tracerAnimationAmount={30}
                 />
                 <SecretButton
                     onClick={copyEmail}
@@ -71,8 +75,8 @@ function AboutLinks({ layout = 'column', className = '' }) {
                 subtitle="or"
                 showEmoji={false}
                 fontSize="1.25rem"
-                animationSpeed={6}
-                animationAmount={10}
+                animationSpeed={4}
+                animationAmount={2}
                 titleTracers={false}
             />
 
