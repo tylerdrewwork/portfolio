@@ -162,6 +162,19 @@
 .about-links .pretty-header-title-block, .about-links .about-links-icons {
   padding: 1rem;
 }
+.about-links .about-links-email-block:hover,
+.about-links .about-links-resume-block:hover,
+.about-links .about-link-icon:hover {
+  background-color: #1f2937;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+.about-links .about-links-email-block:hover .pretty-header-title-stagger-0,
+.about-links .about-links-resume-block:hover .pretty-header-title-stagger-0,
+.about-links .about-link-icon:hover .pretty-header-title-stagger-0 {
+  animation-play-state: paused;
+}
 
 .about-links-icons {
   display: flex;
@@ -191,6 +204,44 @@
   flex-direction: column;
   align-items: center;
   gap: 0.25rem;
+}
+
+.about-links-copy-popup {
+  position: fixed;
+  z-index: 1000;
+  padding: 0.5rem 0.75rem;
+  background: #1f2937;
+  color: #f3f4f6;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  font-size: 0.875rem;
+  max-width: 220px;
+  transform: translate(0, 0);
+}
+.about-links-copy-popup .about-links-copy-popup-text {
+  margin: 0 0 0.25rem 0;
+  white-space: nowrap;
+}
+.about-links-copy-popup .about-links-copy-popup-link {
+  color: #60a5fa;
+  text-decoration: underline;
+  display: block;
+  white-space: nowrap;
+}
+.about-links-copy-popup .about-links-copy-popup-close {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.35rem;
+  background: none;
+  border: none;
+  color: #9ca3af;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+.about-links-copy-popup .about-links-copy-popup-close:hover {
+  color: #f3f4f6;
 }
 
 .about-link-copy {

@@ -6,16 +6,16 @@ export const contactInfo = {
   fullname: 'Tyler Smith',
   firstname: 'Tyler',
   lastname: 'Smith',
-  handle: '@yourhandle',
-  location: 'Location',
-  role: 'Product Designer',
-  email: 'your.email@example.com',
-  phone: '+1 (555) 123-4567',
-  website: 'https://yourwebsite.com',
+  // handle: '@',
+  location: 'Austin, TX',
+  role: 'C# Engineer & Unity Developer',
+  email: 'tylerdrew.work@gmail.com',
+  phone: '+1 713-854-6795',
+  // website: 'https://yourwebsite.com',
   linkedin: 'https://www.linkedin.com/in/tyler-smith-atx/',
   github: 'https://github.com/tylerdrewwork',
   resume: '#', // Replace with your resume PDF URL
-  yearsExperience: 4,
+  yearsExperience: 10,
   openToWork: true,
 };
 

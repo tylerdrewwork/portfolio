@@ -19,16 +19,23 @@ const GITHUB_ICON = (
 function AboutLinks({ layout = 'column', className = '' }) {
     const { linkedin, github, resume, email } = contactInfo;
     const [copyLabel, setCopyLabel] = useState('Copy email');
+    const [popup, setPopup] = useState(null);
 
-    const copyEmail = useCallback(async () => {
+    const copyEmail = useCallback(async (e) => {
+        const x = e?.clientX ?? 0;
+        const y = e?.clientY ?? 0;
         try {
             await navigator.clipboard.writeText(email);
             setCopyLabel('Copied!');
+            setPopup({ x, y });
             setTimeout(() => setCopyLabel('Copy email'), 2000);
+            setTimeout(() => setPopup(null), 5000);
         } catch {
             setCopyLabel('Copy failed');
         }
     }, [email]);
+
+    const closePopup = useCallback(() => setPopup(null), []);
 
     return (
         <nav
@@ -45,12 +52,12 @@ function AboutLinks({ layout = 'column', className = '' }) {
                 titleTracers={true}
             /> */}
             {/* <a href={resume} target="_blank" rel="noopener noreferrer"><h1>Download Resume</h1></a> */}
-            <div className="about-links-email-block">
+            <div className="about-links-email-block" onClick={(e) => copyEmail(e)}>
                 <PrettyHeaderSVG
                     title="Email"
                     subtitle=""
                     showEmoji={false}
-                    fontSize="1.25rem"
+                    fontSize="1.45rem"
                     animationSpeed={6}
                     animationAmount={10}
                     titleTracers={true}
@@ -69,8 +76,22 @@ function AboutLinks({ layout = 'column', className = '' }) {
                     {copyLabel}
                 </SecretButton> */}
             </div>
+            {popup && (
+                <div
+                    className="about-links-copy-popup"
+                    style={{ left: popup.x + 12, top: popup.y + 12 }}
+                    role="tooltip"
+                >
+                    <p className="about-links-copy-popup-text">Copied to clipboard!</p>
+                    <a href={`mailto:${email}`} className="about-links-copy-popup-link" onClick={closePopup}>
+                        Click here to open it in email app.
+                    </a>
+                    <button type="button" className="about-links-copy-popup-close" onClick={(e) => { e.preventDefault(); closePopup(); }} aria-label="Close">×</button>
+                </div>
+            )}
             {/* <br/> */}
             <PrettyHeaderSVG
+                className="about-links-resume-block"
                 title="Resume"
                 subtitle=""
                 showEmoji={false}
