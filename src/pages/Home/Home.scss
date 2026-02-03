@@ -14,7 +14,12 @@
   min-width: 0;
   text-align: end;
   padding-right: 2rem;
-  padding-top: 135%;
+  top: 20vh;
+
+  // if the screen is less height than 900px, then the top should be 0
+  @media (max-height: 900px) {
+    top: 0;
+  }
 }
 
 // Right column: main content, centered with same padding context

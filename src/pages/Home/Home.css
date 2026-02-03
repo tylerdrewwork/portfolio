@@ -13,7 +13,12 @@
   min-width: 0;
   text-align: end;
   padding-right: 2rem;
-  padding-top: 135%;
+  top: 20vh;
+}
+@media (max-height: 900px) {
+  .content-sidebar {
+    top: 0;
+  }
 }
 
 .content-panel {

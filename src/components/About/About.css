@@ -5,6 +5,10 @@
   gap: 1.5rem;
   padding-left: 1rem;
 }
+.about-section p,
+.about-intro p {
+  padding: 0 0.5rem;
+}
 .about-section #aiw-fx-1,
 .about-intro #aiw-fx-1 {
   text-shadow: 1px 0 15px #FD7315, 0 0 10px #FD7315;

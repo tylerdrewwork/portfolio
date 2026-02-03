@@ -8,13 +8,13 @@ function TableOfContents() {
 
     useEffect(() => {
         const contentPanel = document.querySelector('[data-content-panel]');
-        if (!contentPanel) return;
-
         const observedIds = new Set([
             ...tocData.map((item) => item.id),
             ...tocData.flatMap((item) => (item.children || []).map((c) => c.id))
         ]);
 
+        // Use viewport as root so we highlight based on what's visible when the page scrolls
+        const root = contentPanel?.style?.overflowY === 'auto' ? contentPanel : null;
         observerRef.current = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
@@ -24,13 +24,13 @@ function TableOfContents() {
                 });
             },
             {
-                root: contentPanel,
-                rootMargin: '-20% 0px -60% 0px',
+                root,
+                rootMargin: '-15% 0px -55% 0px',
                 threshold: 0
             }
         );
 
-        const sections = contentPanel.querySelectorAll('[id]');
+        const sections = (contentPanel || document).querySelectorAll('[id]');
         sections.forEach((section) => {
             if (observedIds.has(section.id)) {
                 observerRef.current.observe(section);
@@ -46,10 +46,10 @@ function TableOfContents() {
 
     const handleClick = (e, id) => {
         e.preventDefault();
-        const contentPanel = document.querySelector('[data-content-panel]');
         const element = document.getElementById(id);
-        if (element && contentPanel) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (element) {
+            const top = element.getBoundingClientRect().top + window.scrollY - 100;
+            window.scrollTo({ top, behavior: 'smooth' });
         }
     };
 

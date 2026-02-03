@@ -38,9 +38,10 @@
   color: #ffffff;
 }
 .toc-section-link.active {
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.95);
   text-decoration: underline;
   text-underline-offset: 4px;
+  text-decoration-color: rgba(255, 255, 255, 0.4);
 }
 
 .toc-children {
@@ -70,9 +71,4 @@
 }
 .toc-child-link:hover {
   color: #d1d5db;
-}
-.toc-child-link.active {
-  color: #ffffff;
-  text-decoration: underline;
-  text-underline-offset: 3px;
 }

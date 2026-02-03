@@ -13,7 +13,7 @@ function Home() {
                 <aside className="content-sidebar">
                     <About />
                 </aside>
-                <div className="content-panel">
+                <div className="content-panel" data-content-panel>
                     <div className="content-panel-inner">
                         <AboutIntro />
                         <Projects />
