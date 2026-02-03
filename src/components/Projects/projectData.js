@@ -44,7 +44,7 @@ const projectData = [
         id: 4,
         category: 'aiw',
         projectName: 'AI Warehouse Community & Games!',
-        description: '<a href="https://aiwarehouse.itch.io/maze" target="_blank">CLICK TO GO TO THE AI WAREHOUSE MAZE GAME PAGE.</a> <b>Password is albert4ever</b>. </br> Took the initiative to grow an active Discord community of 19k members through consistent updates and direct community engagement.',
+        description: '<a href="https://aiwarehouse.itch.io/maze" target="_blank">CLICK TO GO TO THE AI WAREHOUSE MAZE GAME PAGE.</a> <b>Password is albert4ever</b>. </br> Took the initiative to grow an active Discord community of 19k total members through consistent updates and direct community engagement.',
         projectImages: [
             { src: 'assets/images/projects/ai-warehouse/maze-game-analytics.png', caption: 'Escape The Maze analytics', offsetX: 0, offsetY: 0 },
             { src: 'assets/images/projects/ai-warehouse/game1.png', caption: 'Escape The Maze lava' },
