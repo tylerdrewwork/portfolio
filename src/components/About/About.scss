@@ -317,6 +317,36 @@
   display: flex;
 }
 
+// Footer: links under projects, no particles, always use mobile layout
+.about-links-footer-wrap {
+  // padding-top: 2rem;
+  // margin-top: 2rem;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 8rem;
+}
+
+.about-links-footer {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  flex-wrap: wrap;
+
+  .about-links-email-block,
+  .about-links-resume-block {
+    width: 50%;
+  }
+
+  .about-links-icons {
+    justify-content: center;
+    gap: 2.5rem;
+  }
+
+  @media (max-width: 400px) {
+    flex-wrap: wrap;
+  }
+}
+
 // Contact: form visible on desktop, links visible on mobile
 .contact-form-wrap {
   display: none;

@@ -301,6 +301,32 @@
   display: flex;
 }
 
+.about-links-footer-wrap {
+  width: 50%;
+  margin: auto;
+  margin-bottom: 8rem;
+}
+
+.about-links-footer {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  flex-wrap: wrap;
+}
+.about-links-footer .about-links-email-block,
+.about-links-footer .about-links-resume-block {
+  width: 50%;
+}
+.about-links-footer .about-links-icons {
+  justify-content: center;
+  gap: 2.5rem;
+}
+@media (max-width: 400px) {
+  .about-links-footer {
+    flex-wrap: wrap;
+  }
+}
+
 .contact-form-wrap {
   display: none;
 }
