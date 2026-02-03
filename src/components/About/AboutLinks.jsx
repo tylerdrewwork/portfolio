@@ -37,6 +37,19 @@ function AboutLinks({ layout = 'column', className = '' }) {
 
     const closePopup = useCallback(() => setPopup(null), []);
 
+    const openAndDownloadResume = useCallback((e) => {
+        e.preventDefault();
+        if (!resume) return;
+        window.open(resume, '_blank', 'noopener,noreferrer');
+        const a = document.createElement('a');
+        a.href = resume;
+        a.download = 'Tyler_Smith_Resume.pdf';
+        a.rel = 'noopener noreferrer';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    }, [resume]);
+
     useEffect(() => {
         if (!popup) return;
         const { x: originX, y: originY } = popup;
@@ -101,7 +114,7 @@ function AboutLinks({ layout = 'column', className = '' }) {
                 </div>
             )}
             {/* <br/> */}
-            <a href={resume} target="_blank" rel="noopener noreferrer" className="about-links-resume-block">
+            <a href={resume} className="about-links-resume-block" onClick={openAndDownloadResume} target="_blank" rel="noopener noreferrer" aria-label="Open and download resume (PDF)">
                 <PrettyHeaderSVG
                     title="Resume"
                     subtitle=""

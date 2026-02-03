@@ -306,6 +306,11 @@
   margin: auto;
   margin-bottom: 8rem;
 }
+@media (max-width: 520px) {
+  .about-links-footer-wrap {
+    width: 100%;
+  }
+}
 
 .about-links-footer {
   display: flex;

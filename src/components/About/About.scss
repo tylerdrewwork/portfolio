@@ -324,6 +324,10 @@
   width: 50%;
   margin: auto;
   margin-bottom: 8rem;
+
+  @media (max-width: 520px) {
+    width: 100%;
+  }
 }
 
 .about-links-footer {
