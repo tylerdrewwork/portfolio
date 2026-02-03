@@ -1,6 +1,8 @@
+import { useState, useCallback } from 'react';
 import './About.scss';
 import { contactInfo } from '../../config';
 import PrettyHeaderSVG from '../Utils/PrettyHeaderSVG';
+import SecretButton from '../Utils/SecretButton';
 
 const LINKEDIN_ICON = (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -15,7 +17,18 @@ const GITHUB_ICON = (
 );
 
 function AboutLinks({ layout = 'column', className = '' }) {
-    const { linkedin, github, resume } = contactInfo;
+    const { linkedin, github, resume, email } = contactInfo;
+    const [copyLabel, setCopyLabel] = useState('Copy email');
+
+    const copyEmail = useCallback(async () => {
+        try {
+            await navigator.clipboard.writeText(email);
+            setCopyLabel('Copied!');
+            setTimeout(() => setCopyLabel('Copy email'), 2000);
+        } catch {
+            setCopyLabel('Copy failed');
+        }
+    }, [email]);
 
     return (
         <nav
@@ -39,15 +52,25 @@ function AboutLinks({ layout = 'column', className = '' }) {
                 animationAmount={10} 
                 titleTracers={true}
             />
-            <PrettyHeaderSVG 
-                title="Email Me" 
-                subtitle="tylerdrew.work@gmail.com" 
-                showEmoji={false} 
-                fontSize="4rem" 
-                animationSpeed={6} 
-                animationAmount={10} 
-                titleTracers={true}
-            />
+            <div className="about-links-email-block">
+                <PrettyHeaderSVG
+                    title="Email Me"
+                    subtitle=""
+                    showEmoji={false}
+                    fontSize="4rem"
+                    animationSpeed={6}
+                    animationAmount={10}
+                    titleTracers={true}
+                />
+                <SecretButton
+                    onClick={copyEmail}
+                    alwaysShowOnMobile
+                    proximity={140}
+                    className="about-link about-link-copy"
+                >
+                    {copyLabel}
+                </SecretButton>
+            </div>
         </nav>
     );
 }

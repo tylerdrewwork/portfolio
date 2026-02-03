@@ -72,7 +72,7 @@ function PrettyHeaderSVG({
                         ) : (
                             <h1>{title}</h1>
                         )}
-                        <p>{subtitle}</p>
+                        {subtitle != null && String(subtitle).trim() !== '' && <p>{subtitle}</p>}
                         <div className="pretty-header-emoji-container">
                             <div className="pretty-header-emoji left">
                                 <div className="pretty-header-stagger-0">{left}</div>

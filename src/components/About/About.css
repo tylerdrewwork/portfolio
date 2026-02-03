@@ -180,6 +180,18 @@
   height: 24px;
 }
 
+.about-links-email-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.about-link-copy {
+  font-size: 0.85rem;
+  margin-top: 0;
+}
+
 .about-link-resume {
   margin-top: 0.25rem;
   width: 100%;

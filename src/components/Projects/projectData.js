@@ -41,7 +41,7 @@ const projectData = [
             { src: 'assets/images/projects/ai-warehouse/tooling-1.png', caption: 'Tooling to help debug during agent creation. Helps solve a lot of issues around Unity\'s joint constraints.' },
             { src: 'assets/images/projects/ai-warehouse/tooling-2.png', caption: 'Showing off more of the Humanoid Builder. You can also see the custom tools and gizmos as well as a master debug panel on the left side.' },
             { src: 'assets/images/projects/ai-warehouse/agent-horse.png', caption: 'Horse Agent' },
-            { src: 'assets/images/projects/ai-warehouse/agent-pip.png', caption: 'Pip! I love him. Nothing too special about him. He\' just very cute.' },
+            { src: 'assets/images/projects/ai-warehouse/agent-pip.png', caption: 'Pip! I love him. Nothing too special about him. He\'s just very cute.' },
         ],
     },
     {
