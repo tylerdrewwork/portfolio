@@ -327,6 +327,10 @@
   }
 }
 
+.about-links-resume-block {
+  text-decoration: none;
+}
+
 .contact-form-wrap {
   display: none;
 }

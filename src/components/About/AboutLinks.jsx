@@ -101,16 +101,17 @@ function AboutLinks({ layout = 'column', className = '' }) {
                 </div>
             )}
             {/* <br/> */}
-            <PrettyHeaderSVG
-                className="about-links-resume-block"
-                title="Resume"
-                subtitle=""
-                showEmoji={false}
-                fontSize="1.25rem"
-                animationSpeed={4}
-                animationAmount={2}
-                titleTracers={false}
-            />
+            <a href={resume} target="_blank" rel="noopener noreferrer" className="about-links-resume-block">
+                <PrettyHeaderSVG
+                    title="Resume"
+                    subtitle=""
+                    showEmoji={false}
+                    fontSize="1.25rem"
+                    animationSpeed={4}
+                    animationAmount={2}
+                    titleTracers={false}
+                />
+            </a>
 
             <div className="about-links-icons">
                 <a href={linkedin} className="about-link about-link-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
