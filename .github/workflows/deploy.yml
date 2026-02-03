@@ -39,7 +39,7 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-        # If your site is at root (username.github.io) not /portfolio-2026/, uncomment:
+        # If your site is at root (username.github.io) not /portfolio/, uncomment:
         # env:
         #   VITE_BASE_URL: /
       - name: Setup Pages
