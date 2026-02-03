@@ -72,3 +72,18 @@
 .toc-child-link:hover {
   color: #d1d5db;
 }
+.project-category-title.toc-jump-highlight,
+.project-title.toc-jump-highlight {
+  animation: toc-jump-highlight 1.2s ease-in-out;
+}
+
+@keyframes toc-jump-highlight {
+  0% {
+    background-color: rgba(255, 0, 255, 0.15);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
+  }
+  100% {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}

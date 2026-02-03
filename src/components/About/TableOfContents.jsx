@@ -47,10 +47,26 @@ function TableOfContents() {
     const handleClick = (e, id) => {
         e.preventDefault();
         const element = document.getElementById(id);
-        if (element) {
-            const top = element.getBoundingClientRect().top + window.scrollY - 100;
-            window.scrollTo({ top, behavior: 'smooth' });
-        }
+        if (!element) return;
+
+        const header = element.querySelector('.project-category-title') || element.querySelector('.project-title');
+        const runHighlight = () => {
+            if (header) {
+                header.classList.add('toc-jump-highlight');
+                setTimeout(() => header.classList.remove('toc-jump-highlight'), 1200);
+            }
+        };
+
+        const top = element.getBoundingClientRect().top + window.scrollY - 300;
+        window.scrollTo({ top, behavior: 'smooth' });
+
+        const onScrollEnd = () => {
+            window.removeEventListener('scrollend', onScrollEnd);
+            clearTimeout(fallback);
+            runHighlight();
+        };
+        window.addEventListener('scrollend', onScrollEnd);
+        const fallback = setTimeout(onScrollEnd, 1000);
     };
 
     const isActive = (id) => {

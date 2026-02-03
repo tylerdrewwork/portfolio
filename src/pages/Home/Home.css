@@ -1,6 +1,7 @@
 .content-grid {
   display: grid;
   grid-template-columns: 0.5fr 1fr 0.5fr;
+  grid-template-rows: min-content 1fr;
   min-height: 100vh;
   box-sizing: border-box;
 }
@@ -17,7 +18,7 @@
 }
 @media (max-height: 900px) {
   .content-sidebar {
-    top: 0;
+    top: 10vh;
   }
 }
 
