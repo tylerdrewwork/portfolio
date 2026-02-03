@@ -196,6 +196,11 @@
   margin-top: 0;
 }
 
+.about-link-copy-wrapper {
+  position: absolute;
+  left: 80%;
+}
+
 .about-link-resume {
   margin-top: 0.25rem;
   width: 100%;
