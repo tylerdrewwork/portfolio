@@ -110,14 +110,6 @@
   pointer-events: none;
 }
 
-.gallery-tile-youtube-play::after {
-  content: "";
-  margin-left: 4px;
-  border-style: solid;
-  border-width: 10px 0 10px 18px;
-  border-color: transparent transparent transparent #fff;
-}
-
 .gallery-lightbox-backdrop {
   position: fixed;
   inset: 0;
@@ -219,12 +211,8 @@
   }
 
   .gallery-tile-youtube-play {
-    width: 2rem;
-    height: 2rem;
-  }
-
-  .gallery-tile-youtube-play::after {
-    border-width: 6px 0 6px 11px;
+    width: 2.5rem;
+    height: 1.76rem;
   }
 }
 @media (min-width: 768px) {
