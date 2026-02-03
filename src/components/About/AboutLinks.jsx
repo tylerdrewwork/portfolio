@@ -35,7 +35,6 @@ function AboutLinks({ layout = 'column', className = '' }) {
             className={`about-links ${layout === 'row' ? 'about-links-row' : ''} ${className}`.trim()}
             aria-label="Profile links"
         >
-
             {/* <PrettyHeaderSVG 
                 title="Download Resume" 
                 subtitle="or" 
@@ -48,8 +47,8 @@ function AboutLinks({ layout = 'column', className = '' }) {
             {/* <a href={resume} target="_blank" rel="noopener noreferrer"><h1>Download Resume</h1></a> */}
             <div className="about-links-email-block">
                 <PrettyHeaderSVG
-                    title="Email Me"
-                    subtitle="or"
+                    title="Email"
+                    subtitle=""
                     showEmoji={false}
                     fontSize="1.25rem"
                     animationSpeed={6}
@@ -60,7 +59,7 @@ function AboutLinks({ layout = 'column', className = '' }) {
                     tracerDelay={150}
                     tracerAnimationAmount={30}
                 />
-                <SecretButton
+                {/* <SecretButton
                     onClick={copyEmail}
                     alwaysShowOnMobile={true}
                     proximity={40}
@@ -68,11 +67,12 @@ function AboutLinks({ layout = 'column', className = '' }) {
                     wrapperClassName="about-link-copy-wrapper"
                 >
                     {copyLabel}
-                </SecretButton>
+                </SecretButton> */}
             </div>
+            {/* <br/> */}
             <PrettyHeaderSVG
-                title="Download Resume"
-                subtitle="or"
+                title="Resume"
+                subtitle=""
                 showEmoji={false}
                 fontSize="1.25rem"
                 animationSpeed={4}

@@ -164,7 +164,11 @@
 .about-links {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  // gap: 0.5rem;
+
+  .pretty-header-title-block, .about-links-icons {
+    padding: 1rem;
+  }
 }
 
 .about-links-icons {

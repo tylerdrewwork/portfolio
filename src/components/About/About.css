@@ -158,7 +158,9 @@
 .about-links {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+}
+.about-links .pretty-header-title-block, .about-links .about-links-icons {
+  padding: 1rem;
 }
 
 .about-links-icons {
