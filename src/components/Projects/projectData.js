@@ -12,7 +12,7 @@ const projectData = [
             { src: 'assets/images/projects/ai-warehouse/videos/muscle humanoid.mp4', caption: 'Agent muscle system, using realistic muscle simulation to move the agents more realistically.' },
             { src: 'assets/images/projects/ai-warehouse/gifs/agent muscles motion.gif', caption: 'Agent muscle motion' },
             { src: 'assets/images/projects/ai-warehouse/gifs/muscles.gif', caption: 'Testing the rotational constraints on the agent muscles (not muscle system)' },
-            { src: 'assets/images/projects/ai-warehouse/videos/building mechanics soccer.mp4', caption: 'Building soccer mechanics and agent abilities', offsetX: 75, offsetY: 0 },
+            { src: 'assets/images/projects/ai-warehouse/videos/building mechanics soccer.mp4', caption: 'ABILITIES: Here you can see the soccer mechanics and agent using their kick and movement abilities. The ability system drastically improved the speed at which we could build new mechanics.', offsetX: 75, offsetY: 0 },
             { src: 'assets/images/projects/ai-warehouse/gifs/bike.gif', caption: 'Building the very complicated and hilarious bicycle mechanics', offsetX: 0, offsetY: 0 },
             { src: 'assets/images/projects/ai-warehouse/odin validator.png', caption: 'Odin Validator. Built validations to find and squash bugs in the scenes & assets quickly.' },
             
