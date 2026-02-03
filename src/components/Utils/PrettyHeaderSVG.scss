@@ -1,20 +1,20 @@
 
 
 @keyframes prettyHeaderRotate {
-    0% { transform: rotate(.25deg); }
-    100% { transform: rotate(-.25deg); }
+    0% { transform: rotate(calc(0.25deg * var(--pretty-header-amount, 1))); }
+    100% { transform: rotate(calc(-0.25deg * var(--pretty-header-amount, 1))); }
 }
 
 @keyframes prettyHeaderRotateMore {
-    0% { transform: rotate(8deg) scale(1.17); }
+    0% { transform: rotate(calc(8deg * var(--pretty-header-amount, 1))) scale(calc(1 + 0.17 * var(--pretty-header-amount, 1))); }
     50% { transform: rotate(0deg) scale(1); }
-    100% { transform: rotate(-6deg) scale(1.1); }
+    100% { transform: rotate(calc(-6deg * var(--pretty-header-amount, 1))) scale(calc(1 + 0.1 * var(--pretty-header-amount, 1))); }
 }
 
 @keyframes prettyHeaderRotateMost {
-    0% { transform: rotate(14deg) scale(1.26); }
+    0% { transform: rotate(calc(14deg * var(--pretty-header-amount, 1))) scale(calc(1 + 0.26 * var(--pretty-header-amount, 1))); }
     50% { transform: rotate(0deg) scale(1); }
-    100% { transform: rotate(-12deg) scale(1.3); }
+    100% { transform: rotate(calc(-12deg * var(--pretty-header-amount, 1))) scale(calc(1 + 0.3 * var(--pretty-header-amount, 1))); }
 }
 
 @keyframes prettyHeaderGradient {
@@ -56,10 +56,10 @@
     text-align: center;
 
     h1 {
-        font-size: clamp(1.25rem, 5vw, 40px);
+        font-size: var(--pretty-header-font-size, clamp(1.25rem, 5vw, 40px));
 
         @media (max-width: 768px) {
-        font-size: clamp(1.25rem, 50vw, 60px);
+            font-size: var(--pretty-header-font-size, clamp(1.25rem, 50vw, 60px));
         }
 
         z-index: 5;
@@ -68,7 +68,7 @@
         letter-spacing: clamp(2px, 1vw, 5px);
         text-transform: uppercase;
         text-shadow: 0 1px 0 #efefef, 0 2px 0 #efefef, 0 3px 0 #efefef, 0 4px 0 #efefef, 0 12px 5px rgba(0, 0, 0, 0.9);
-        animation: prettyHeaderRotate ease-in-out 10s infinite alternate;
+        animation: prettyHeaderRotate ease-in-out calc(10s / var(--pretty-header-speed, 1)) infinite alternate;
     }
 
     p {
@@ -77,9 +77,9 @@
         letter-spacing: 5px;
         margin: 0;
         padding-top: 10px;
-        font-size: 20px;
+        font-size: var(--pretty-header-subtitle-size, 20px);
         text-shadow: 0 1px 0 #efefef;
-        animation: prettyHeaderFadeIn 2s ease 0s normal forwards 1;
+        animation: prettyHeaderFadeIn calc(2s / var(--pretty-header-speed, 1)) ease 0s normal forwards 1;
     }
 }
 
@@ -95,10 +95,14 @@
     pointer-events: none;
 }
 
+.pretty-header-no-emoji .pretty-header-emoji-container {
+    display: none;
+}
+
 .pretty-header-emoji {
     position: relative;
     display: grid;
-    font-size: clamp(2rem, 100vw, 80px);
+    font-size: var(--pretty-header-emoji-size, clamp(2rem, 100vw, 80px));
     margin: 0 clamp(8px, 4vw, 30px);
 
     &.left div {
@@ -120,20 +124,20 @@
 }
 
 .pretty-header-stagger-0 {
-    animation: prettyHeaderRotate ease-in-out 2s infinite alternate;
+    animation: prettyHeaderRotate ease-in-out calc(2s / var(--pretty-header-speed, 1)) infinite alternate;
     animation-delay: 0ms;
     z-index: 3;
 }
 
 .pretty-header-stagger-1 {
-    animation: prettyHeaderRotateMore ease-in-out 2s infinite alternate;
+    animation: prettyHeaderRotateMore ease-in-out calc(2s / var(--pretty-header-speed, 1)) infinite alternate;
     animation-delay: 250ms;
     z-index: 2;
     opacity: 0.5;
 }
 
 .pretty-header-stagger-2 {
-    animation: prettyHeaderRotateMost ease-in-out 2s infinite alternate;
+    animation: prettyHeaderRotateMost ease-in-out calc(2s / var(--pretty-header-speed, 1)) infinite alternate;
     animation-delay: 500ms;
     z-index: 1;
     opacity: 0.2;

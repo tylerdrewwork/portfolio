@@ -18,6 +18,10 @@ function PrettyHeaderSVG({
     leftEmoji = "🏆",
     rightEmoji = "🏆",
     emojiPool,
+    showEmoji = true,
+    fontSize,
+    animationSpeed = 1,
+    animationAmount = 1,
     width = 800,
     height = 140,
     className = "",
@@ -33,6 +37,16 @@ function PrettyHeaderSVG({
     const right = chosenEmoji ?? rightEmoji;
     const viewBox = `0 0 ${width} ${height}`;
 
+    const rootStyle = {
+        ...(fontSize != null && {
+            '--pretty-header-font-size': typeof fontSize === 'number' ? `${fontSize}px` : fontSize,
+            '--pretty-header-subtitle-size': typeof fontSize === 'number' ? `${fontSize * 0.5}px` : `calc(${fontSize} * 0.5)`,
+            '--pretty-header-emoji-size': typeof fontSize === 'number' ? `${fontSize * 2}px` : `calc(${fontSize} * 2)`,
+        }),
+        ...(animationSpeed != null && { '--pretty-header-speed': Number(animationSpeed) }),
+        ...(animationAmount != null && { '--pretty-header-amount': Number(animationAmount) }),
+    };
+
     return (
         <svg
             fill="none"
@@ -44,7 +58,7 @@ function PrettyHeaderSVG({
             style={{ maxWidth: width, display: 'block' }}
         >
             <foreignObject width="100%" height="100%">
-                <div xmlns="http://www.w3.org/1999/xhtml" className="pretty-header-root">
+                <div xmlns="http://www.w3.org/1999/xhtml" className={`pretty-header-root${showEmoji ? '' : ' pretty-header-no-emoji'}`} style={Object.keys(rootStyle).length ? rootStyle : undefined}>
                     <div className="pretty-header-container">
                         <h1>{title}</h1>
                         <p>{subtitle}</p>

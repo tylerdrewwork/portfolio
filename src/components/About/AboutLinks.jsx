@@ -1,5 +1,6 @@
 import './About.scss';
 import { contactInfo } from '../../config';
+import PrettyHeaderSVG from '../Utils/PrettyHeaderSVG';
 
 const LINKEDIN_ICON = (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -29,9 +30,10 @@ function AboutLinks({ layout = 'column', className = '' }) {
                     {GITHUB_ICON}
                 </a>
             </div>
-            <a href={resume} className="about-link about-link-resume" target="_blank" rel="noopener noreferrer">
+            <PrettyHeaderSVG title="Download Resume" subtitle="" showEmoji={false} fontSize="4rem" animationSpeed={6} animationAmount={10} />
+            {/* <a href={resume} className="about-link about-link-resume" target="_blank" rel="noopener noreferrer">
                 Download Resume
-            </a>
+            </a> */}
         </nav>
     );
 }
