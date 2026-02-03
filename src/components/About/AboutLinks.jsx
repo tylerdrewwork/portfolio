@@ -30,10 +30,24 @@ function AboutLinks({ layout = 'column', className = '' }) {
                     {GITHUB_ICON}
                 </a>
             </div>
-            <PrettyHeaderSVG title="Download Resume" subtitle="" showEmoji={false} fontSize="4rem" animationSpeed={6} animationAmount={10} />
-            {/* <a href={resume} className="about-link about-link-resume" target="_blank" rel="noopener noreferrer">
-                Download Resume
-            </a> */}
+            <PrettyHeaderSVG 
+                title="Download Resume" 
+                subtitle="" 
+                showEmoji={false} 
+                fontSize="4rem" 
+                animationSpeed={6} 
+                animationAmount={10} 
+                titleTracers={true}
+            />
+            <PrettyHeaderSVG 
+                title="Email Me" 
+                subtitle="tylerdrew.work@gmail.com" 
+                showEmoji={false} 
+                fontSize="4rem" 
+                animationSpeed={6} 
+                animationAmount={10} 
+                titleTracers={true}
+            />
         </nav>
     );
 }

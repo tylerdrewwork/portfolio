@@ -19,6 +19,8 @@ function PrettyHeaderSVG({
     rightEmoji = "🏆",
     emojiPool,
     showEmoji = true,
+    titleTracers = false,
+    tracerOpacity = 1,
     fontSize,
     animationSpeed = 1,
     animationAmount = 1,
@@ -45,6 +47,7 @@ function PrettyHeaderSVG({
         }),
         ...(animationSpeed != null && { '--pretty-header-speed': Number(animationSpeed) }),
         ...(animationAmount != null && { '--pretty-header-amount': Number(animationAmount) }),
+        ...(tracerOpacity != null && { '--pretty-header-tracer-opacity': Number(tracerOpacity) }),
     };
 
     return (
@@ -58,9 +61,17 @@ function PrettyHeaderSVG({
             style={{ maxWidth: width, display: 'block' }}
         >
             <foreignObject width="100%" height="100%">
-                <div xmlns="http://www.w3.org/1999/xhtml" className={`pretty-header-root${showEmoji ? '' : ' pretty-header-no-emoji'}`} style={Object.keys(rootStyle).length ? rootStyle : undefined}>
+                <div xmlns="http://www.w3.org/1999/xhtml" className={`pretty-header-root${showEmoji ? '' : ' pretty-header-no-emoji'}${titleTracers ? ' pretty-header-title-tracers' : ''}`} style={Object.keys(rootStyle).length ? rootStyle : undefined}>
                     <div className="pretty-header-container">
-                        <h1>{title}</h1>
+                        {titleTracers ? (
+                            <div className="pretty-header-title-wrap">
+                                <h1 className="pretty-header-title-tracer pretty-header-title-stagger-0">{title}</h1>
+                                <span className="pretty-header-title-tracer pretty-header-title-stagger-1" aria-hidden="true">{title}</span>
+                                <span className="pretty-header-title-tracer pretty-header-title-stagger-2" aria-hidden="true">{title}</span>
+                            </div>
+                        ) : (
+                            <h1>{title}</h1>
+                        )}
                         <p>{subtitle}</p>
                         <div className="pretty-header-emoji-container">
                             <div className="pretty-header-emoji left">

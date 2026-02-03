@@ -71,6 +71,52 @@
         animation: prettyHeaderRotate ease-in-out calc(10s / var(--pretty-header-speed, 1)) infinite alternate;
     }
 
+    // Title tracers: stacked layers with stagger delay (like emoji)
+    .pretty-header-title-wrap {
+        display: grid;
+        margin: 0;
+
+        > * {
+            grid-column: 1;
+            grid-row: 1;
+        }
+    }
+
+    .pretty-header-title-tracer {
+        font-size: var(--pretty-header-font-size, clamp(1.25rem, 5vw, 40px));
+
+        @media (max-width: 768px) {
+            font-size: var(--pretty-header-font-size, clamp(1.25rem, 50vw, 60px));
+        }
+
+        margin: 0;
+        line-height: 1.3;
+        letter-spacing: clamp(2px, 1vw, 5px);
+        text-transform: uppercase;
+        text-shadow: 0 1px 0 #efefef, 0 2px 0 #efefef, 0 3px 0 #efefef, 0 4px 0 #efefef, 0 12px 5px rgba(0, 0, 0, 0.9);
+    }
+
+    .pretty-header-title-stagger-0 {
+        animation: prettyHeaderRotate ease-in-out calc(10s / var(--pretty-header-speed, 1)) infinite alternate;
+        animation-delay: 0ms;
+        z-index: 3;
+        opacity: 1;
+    }
+
+    .pretty-header-title-stagger-1 {
+        animation: prettyHeaderRotate ease-in-out calc(10s / var(--pretty-header-speed, 1)) infinite alternate;
+        animation-delay: 250ms;
+        z-index: 2;
+        opacity: min(1, calc(0.5 * var(--pretty-header-tracer-opacity, 1)));
+    }
+
+    .pretty-header-title-stagger-2 {
+        animation: prettyHeaderRotate ease-in-out calc(10s / var(--pretty-header-speed, 1)) infinite alternate;
+        animation-delay: 500ms;
+        z-index: 1;
+        opacity: min(1, calc(0.2 * var(--pretty-header-tracer-opacity, 1)));
+    }
+
     p {
         width: 100%;
         z-index: 5;
@@ -133,12 +179,12 @@
     animation: prettyHeaderRotateMore ease-in-out calc(2s / var(--pretty-header-speed, 1)) infinite alternate;
     animation-delay: 250ms;
     z-index: 2;
-    opacity: 0.5;
+    opacity: min(1, calc(0.5 * var(--pretty-header-tracer-opacity, 1)));
 }
 
 .pretty-header-stagger-2 {
     animation: prettyHeaderRotateMost ease-in-out calc(2s / var(--pretty-header-speed, 1)) infinite alternate;
     animation-delay: 500ms;
     z-index: 1;
-    opacity: 0.2;
+    opacity: min(1, calc(0.2 * var(--pretty-header-tracer-opacity, 1)));
 }
