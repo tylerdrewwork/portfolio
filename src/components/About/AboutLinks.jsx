@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import './About.scss';
 import { contactInfo } from '../../config';
 import PrettyHeaderSVG from '../Utils/PrettyHeaderSVG';
@@ -36,6 +36,17 @@ function AboutLinks({ layout = 'column', className = '' }) {
     }, [email]);
 
     const closePopup = useCallback(() => setPopup(null), []);
+
+    useEffect(() => {
+        if (!popup) return;
+        const { x: originX, y: originY } = popup;
+        const handleMove = (e) => {
+            const dist = Math.hypot(e.clientX - originX, e.clientY - originY);
+            if (dist >= 400) setPopup(null);
+        };
+        window.addEventListener('mousemove', handleMove);
+        return () => window.removeEventListener('mousemove', handleMove);
+    }, [popup]);
 
     return (
         <nav
