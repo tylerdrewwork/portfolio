@@ -8,7 +8,7 @@ function AboutIntro() {
             <PrettyHeaderSVG className="about-name-svg" title="Hi! I'm Tyler Smith" subtitle="" />
             <div className="about-bio">
                  <p style={{ textAlign: 'center' , fontSize: '1.25rem' , fontWeight: '600' }}>
-                    Developing for 10 years in Unity C#, and 4+ years professionally.
+                    Developing for 10 years in Unity C#, and 4+ years professionally
                 </p>
                 <p>
                     I LOVE building games, toys, tools, and community-engaging experiences that people can enjoy or learn from. 
