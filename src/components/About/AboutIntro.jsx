@@ -11,6 +11,7 @@ function AboutIntro() {
                 title="Hi! I'm Tyler Smith"
                 subtitle=""
                 emojiPool={['🏆', '😌', '😲', '🤠', '🙀', '🐈‍⬛', '👨‍💻', '🧙', '🤹‍♂️', '🎊', '🎩', '🔊', '🎧', '🎙️', '🎹']}
+                showEmoji={false}
             />
             <div className="about-bio">
                  <p style={{ textAlign: 'center' , fontSize: '1.25rem' , fontWeight: '600' }}>

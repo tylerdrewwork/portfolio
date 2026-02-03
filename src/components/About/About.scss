@@ -183,6 +183,27 @@
       animation-play-state: paused;
     }
   }
+
+  // Mobile for contact links
+  @media (max-width: 968px) {
+    flex-direction: row;
+    // width: 50%;
+    align-self: center;
+
+    @media (max-width: 400px) {
+      flex-wrap: wrap;
+    }
+
+    .about-links-email-block,
+    .about-links-resume-block {
+      width: 50%;
+    }
+
+    .about-links-icons {
+      justify-content: center;
+      gap: 2.5rem;
+    }
+  }
 }
 
 .about-links-icons {

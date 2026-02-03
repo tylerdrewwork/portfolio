@@ -81,12 +81,6 @@ function PrettyHeaderSVG({
     return (
         <div
             className={`pretty-header ${className}`.trim()}
-            style={{
-                width: '100%',
-                maxWidth: width,
-                aspectRatio: `${width} / ${height}`,
-                display: 'block',
-            }}
         >
             <div
                 className={`pretty-header-root${showEmoji ? '' : ' pretty-header-no-emoji'}${titleTracers ? ' pretty-header-title-tracers' : ''}${rainbowTracers ? ' pretty-header-rainbow-tracers' : ''}`}

@@ -175,6 +175,29 @@
 .about-links .about-link-icon:hover .pretty-header-title-stagger-0 {
   animation-play-state: paused;
 }
+@media (max-width: 968px) {
+  .about-links {
+    flex-direction: row;
+    align-self: center;
+  }
+}
+@media (max-width: 968px) and (max-width: 400px) {
+  .about-links {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 968px) {
+  .about-links .about-links-email-block,
+.about-links .about-links-resume-block {
+    width: 50%;
+  }
+}
+@media (max-width: 968px) {
+  .about-links .about-links-icons {
+    justify-content: center;
+    gap: 2.5rem;
+  }
+}
 
 .about-links-icons {
   display: flex;
