@@ -4,6 +4,15 @@
   flex-direction: column;
   gap: 1.5rem;
   padding-left: 1rem;
+
+  #aiw-fx-1 {
+    text-shadow:  0 0 15px #FD7315;
+    font-weight: 800;
+    }
+  #aiw-fx-2 {
+    text-shadow:  0 0 15px #005EFF;
+    font-weight: 800;
+  }
 }
 
 .about-section-toc {

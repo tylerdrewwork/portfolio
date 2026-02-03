@@ -5,6 +5,16 @@
   gap: 1.5rem;
   padding-left: 1rem;
 }
+.about-section #aiw-fx-1,
+.about-intro #aiw-fx-1 {
+  text-shadow: 0 0 15px #FD7315;
+  font-weight: 800;
+}
+.about-section #aiw-fx-2,
+.about-intro #aiw-fx-2 {
+  text-shadow: 0 0 15px #005EFF;
+  font-weight: 800;
+}
 
 .about-section-toc {
   gap: 0;

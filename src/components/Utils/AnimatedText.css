@@ -1,0 +1,26 @@
+.animated-text {
+  display: inline-block;
+}
+.animated-text--wiggle {
+  animation: animated-text-wiggle 0.4s ease-in-out infinite alternate;
+}
+.animated-text--bounce {
+  animation: animated-text-bounce 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes animated-text-wiggle {
+  0% {
+    transform: translateX(-2px);
+  }
+  100% {
+    transform: translateX(2px);
+  }
+}
+@keyframes animated-text-bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-2px);
+  }
+}

@@ -1,6 +1,7 @@
 import AboutLinks from './AboutLinks';
 import './About.scss';
 import PrettyHeaderSVG from '../Utils/PrettyHeaderSVG';
+import AnimatedText from '../Utils/AnimatedText';
 
 function AboutIntro() {
     return (
@@ -11,11 +12,11 @@ function AboutIntro() {
                     Developing for 10 years in Unity C#, and 4+ years professionally
                 </p>
                 <p>
-                    I LOVE building games, toys, tools, and community-engaging experiences that people can enjoy or learn from. 
+                    I <AnimatedText animation="bounce">LOVE</AnimatedText> building games, toys, tools, and community-engaging experiences that people can enjoy or learn from. 
                     I have an especially strong passion for physics and simulation games, which can be seen very apparently below in my projects.
                 </p>
                 <p>
-                    My recent work includes <b>AI Warehouse</b>, where I led the game development of videos, architected systems, tooling, agents, video mechanics, and environments. I helped drive over 60 million views and brought over 15k members into our Discord community!! I take a lot of pride in our videos and the amazing community we have.
+                    My recent work includes <span id="aiw-fx-1">AI</span><span id="aiw-fx-2"> Warehouse</span>, where I led the game development of videos, architected systems, tooling, agents, video mechanics, and environments. I helped drive over <b>60 million views</b> and brought over <b>15k members</b> into our Discord community!! I take a lot of pride in our videos and the amazing community we have.
                 </p>
             </div>
             <AboutLinks className="about-links-intro" />
