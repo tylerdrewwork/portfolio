@@ -14,6 +14,12 @@ function isVideoSrc(src) {
     return /\.mp4$/i.test(src);
 }
 
+/** Strip HTML tags for use in aria-label, alt, title. */
+function captionPlainText(html) {
+    if (!html || typeof html !== 'string') return '';
+    return html.replace(/<[^>]*>/g, '').trim();
+}
+
 function normalizeItem(item) {
     if (typeof item === 'string') {
         const type = isVideoSrc(item) ? 'video' : 'image';
@@ -21,7 +27,17 @@ function normalizeItem(item) {
     }
     if (item.type === 'youtube' || item.youtubeId) {
         const youtubeId = getYoutubeId(item.youtubeId);
-        return youtubeId ? { type: 'youtube', youtubeId, caption: item.caption || '' } : null;
+        const timestamp = item.timestamp != null ? Number(item.timestamp) : null;
+        return youtubeId
+            ? {
+                type: 'youtube',
+                youtubeId,
+                caption: item.caption || '',
+                offsetX: item.offsetX ?? 0,
+                offsetY: item.offsetY ?? 0,
+                ...(timestamp >= 0 && { timestamp: Math.floor(timestamp) })
+            }
+            : null;
     }
     const type = isVideoSrc(item.src) ? 'video' : 'image';
     return {
@@ -63,14 +79,17 @@ function ProjectImageGallery({ images, projectName }) {
                             type="button"
                             className="gallery-tile-trigger"
                             onClick={() => setEnlargedIndex(index)}
-                            aria-label={`View ${item.caption || 'video'} full size`}
+                            aria-label={`View ${captionPlainText(item.caption) || 'video'} full size`}
                         >
                             <div className="gallery-tile-youtube-thumb">
                                 <img
                                     src={`https://img.youtube.com/vi/${item.youtubeId}/maxresdefault.jpg`}
-                                    alt={item.caption || `Video ${index + 1}`}
+                                    alt={captionPlainText(item.caption) || `Video ${index + 1}`}
                                     className="gallery-tile-image"
                                     loading="lazy"
+                                    style={{
+                                        objectPosition: `${item.offsetX}% ${item.offsetY}%`
+                                    }}
                                     onError={(e) => {
                                         e.target.src = `https://img.youtube.com/vi/${item.youtubeId}/hqdefault.jpg`;
                                     }}
@@ -83,7 +102,7 @@ function ProjectImageGallery({ images, projectName }) {
                             type="button"
                             className="gallery-tile-trigger"
                             onClick={() => setEnlargedIndex(index)}
-                            aria-label={`View ${item.caption || 'video'} full size`}
+                            aria-label={`View ${captionPlainText(item.caption) || 'video'} full size`}
                         >
                             <video
                                 src={getAssetUrl(item.src)}
@@ -102,11 +121,11 @@ function ProjectImageGallery({ images, projectName }) {
                             type="button"
                             className="gallery-tile-trigger"
                             onClick={() => setEnlargedIndex(index)}
-                            aria-label={`View ${item.caption || `image ${index + 1}`} full size`}
+                            aria-label={`View ${captionPlainText(item.caption) || `image ${index + 1}`} full size`}
                         >
                             <img
                                 src={getAssetUrl(item.src)}
-                                alt={item.caption || `${projectName} - Image ${index + 1}`}
+                                alt={captionPlainText(item.caption) || `${projectName} - Image ${index + 1}`}
                                 className="gallery-tile-image"
                                 style={{
                                     objectPosition: `${item.offsetX}% ${item.offsetY}%`
@@ -115,9 +134,7 @@ function ProjectImageGallery({ images, projectName }) {
                         </button>
                     )}
                     {item.caption && (
-                        <figcaption className="gallery-tile-caption">
-                            {item.caption}
-                        </figcaption>
+                        <figcaption className="gallery-tile-caption" dangerouslySetInnerHTML={{ __html: item.caption }} />
                     )}
                 </figure>
             ))}
@@ -143,15 +160,15 @@ function ProjectImageGallery({ images, projectName }) {
                             <>
                                 <div className="gallery-lightbox-video-wrap">
                                     <iframe
-                                        src={`https://www.youtube.com/embed/${items[enlargedIndex].youtubeId}?autoplay=1`}
-                                        title={items[enlargedIndex].caption || 'Video'}
+                                        src={`https://www.youtube.com/embed/${items[enlargedIndex].youtubeId}?autoplay=1${items[enlargedIndex].timestamp != null ? `&start=${items[enlargedIndex].timestamp}` : ''}`}
+                                        title={captionPlainText(items[enlargedIndex].caption) || 'Video'}
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                         allowFullScreen
                                         className="gallery-lightbox-video"
                                     />
                                 </div>
                                 {items[enlargedIndex].caption && (
-                                    <p className="gallery-lightbox-caption">{items[enlargedIndex].caption}</p>
+                                    <p className="gallery-lightbox-caption" dangerouslySetInnerHTML={{ __html: items[enlargedIndex].caption }} />
                                 )}
                             </>
                         ) : items[enlargedIndex].type === 'video' ? (
@@ -168,18 +185,18 @@ function ProjectImageGallery({ images, projectName }) {
                                     />
                                 </div>
                                 {items[enlargedIndex].caption && (
-                                    <p className="gallery-lightbox-caption">{items[enlargedIndex].caption}</p>
+                                    <p className="gallery-lightbox-caption" dangerouslySetInnerHTML={{ __html: items[enlargedIndex].caption }} />
                                 )}
                             </>
                         ) : (
                             <>
                                 <img
                                     src={getAssetUrl(items[enlargedIndex].src)}
-                                    alt={items[enlargedIndex].caption || `${projectName} - Image ${enlargedIndex + 1}`}
+                                    alt={captionPlainText(items[enlargedIndex].caption) || `${projectName} - Image ${enlargedIndex + 1}`}
                                     className="gallery-lightbox-image"
                                 />
                                 {items[enlargedIndex].caption && (
-                                    <p className="gallery-lightbox-caption">{items[enlargedIndex].caption}</p>
+                                    <p className="gallery-lightbox-caption" dangerouslySetInnerHTML={{ __html: items[enlargedIndex].caption }} />
                                 )}
                             </>
                         )}

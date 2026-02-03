@@ -1,46 +1,44 @@
-// projectImages: string (URL) or { src, caption?, offsetX?, offsetY? }. offsetX/offsetY (default 0) set object-position % in gallery tile only (0,0=top-left, 50,50=center).
-// In projectImages you can add YouTube as a tile: { type: 'youtube', youtubeId: 'VIDEO_ID' or full URL, caption: '...' }.
+// projectImages: string (URL) or { src, caption?, offsetX?, offsetY? }. caption supports HTML (e.g. <br/>, <a href="...">). offsetX/offsetY (default 0) set object-position % in gallery tile only.
+// In projectImages you can add YouTube as a tile: { type: 'youtube', youtubeId: 'VIDEO_ID' or full URL, caption: '...', offsetX?, offsetY?, timestamp? }. offsetX/offsetY set thumbnail crop. timestamp = start time in seconds (e.g. 90 = 1:30).
 // description: supports HTML (e.g. <br /> for line breaks).
 // albert-updates: https://discord.gg/aTun9jkFnB
 const projectData = [
     {
-        id: 1,
-        category: 'aiw',
-        projectName: 'AI Warehouse Humanoid Agents',
-        description: 'Created all of the agent\'s rigs for AI Warehouse. Created systems like abilities, room modules, agent modules, and auto behavior parameter tuning. Agent abilities was one of the biggest improvements, since it made creating new agents with new mechanics much easier.',
-        projectImages: [
-            { type: 'youtube', youtubeId: 'hCmrMOzx5VA', caption: 'AI Warehouse Humanoid Agents' },
-            { src: 'assets/images/projects/ai-warehouse/tooling-1.png', caption: 'Tooling screenshot' },
-            { src: 'assets/images/projects/ai-warehouse/tooling-2.png', caption: 'Tooling overview' },
-            { src: 'assets/images/projects/ai-warehouse/agent-horse.png', caption: 'Agent Horse' },
-            { src: 'assets/images/projects/ai-warehouse/agent-pip.png', caption: 'Agent Pip' },
-        ],
-    },
-    {
         id: 2,
         category: 'aiw',
         projectName: 'Mechanics, Systems, & Tools Creation',
-        description: 'I created: all of the mechanics, tooling and systems you see in the videos! I\'m very proud of the work I did here. <br /><br />Tooling was made for the Game Development and Machine Learning teams on request and sometimes proactively if they agreed it would be helpful. Systems were made to help the Game Development team build environments faster and more efficiently. There were also many other systems created to fulfill the needs of the current production (video).',
+        description: 'I created all of the agent\'s abilities and the video\'s mechanics that you see in the videos, along with the tooling and systems you don\'t see in the videos! I\'m very proud of the work I did here. <br /><br />Tooling was made for the Game Development and Machine Learning teams on request and sometimes proactively if they agreed it would be helpful. Systems were made to help the Game Development team build environments faster and more efficiently. There were also many other systems created to fulfill the needs of the current production (video).',
         projectImages: [
-            { src: 'assets/images/projects/ai-warehouse/gifs/agent muscles motion.gif', caption: 'Agent motion' },
-            { src: 'assets/images/projects/ai-warehouse/gifs/muscles.gif', caption: 'Muscle system' },
-            { src: 'assets/images/projects/ai-warehouse/agent muscles.png', caption: 'Agent rig' },
-            { src: 'assets/images/projects/ai-warehouse/gifs/bike.gif', caption: 'Bike', offsetX: 0, offsetY: 0 },
+            { src: 'assets/images/projects/ai-warehouse/videos/muscle humanoid.mp4', caption: 'Agent muscle system, using realistic muscle simulation to move the agents more realistically.' },
+            { src: 'assets/images/projects/ai-warehouse/gifs/agent muscles motion.gif', caption: 'Agent muscle motion' },
+            { src: 'assets/images/projects/ai-warehouse/gifs/muscles.gif', caption: 'Testing the rotational constraints on the agent muscles (not muscle system)' },
+            { src: 'assets/images/projects/ai-warehouse/videos/building mechanics soccer.mp4', caption: 'Building soccer mechanics and agent abilities', offsetX: 75, offsetY: 0 },
+            { src: 'assets/images/projects/ai-warehouse/gifs/bike.gif', caption: 'Building the very complicated and hilarious bicycle mechanics', offsetX: 0, offsetY: 0 },
+            { src: 'assets/images/projects/ai-warehouse/odin validator.png', caption: 'Odin Validator, used to find and squash bugs in the scenes & assets quickly.' },
         ]
+    },
+    {
+        id: 1,
+        category: 'aiw',
+        projectName: 'Humanoid Agents',
+        description: 'Created all of the agent\'s rigs for AI Warehouse, as well as the agent\'s abilities and modules. Also made improvements to the Unity ML-Agents library that made working with the agents much easier for the ML team. <br /><br /> Adding the foundation for Agent abilities was one of the biggest improvements, since it made creating new agents with new mechanics much easier!',
+        projectImages: [
+            { type: 'youtube', youtubeId: 'hCmrMOzx5VA', caption: 'Example video showing off the agents in action!', offsetX: 30, offsetY: 0, timestamp: 589 },
+            { src: 'assets/images/projects/ai-warehouse/tooling-1.png', caption: 'Tooling to help debug during agent creation. Helps solve a lot of issues around Unity\'s joint constraints.' },
+            { src: 'assets/images/projects/ai-warehouse/tooling-2.png', caption: 'Showing off more of the Humanoid Builder. You can also see the custom tools and gizmos as well as a master debug panel on the left side.' },
+            { src: 'assets/images/projects/ai-warehouse/agent-horse.png', caption: 'Horse Agent' },
+            { src: 'assets/images/projects/ai-warehouse/agent-pip.png', caption: 'Pip! I love him.' },
+        ],
     },
     {
         id: 2,
         category: 'aiw',
         projectName: 'Replay System',
         description: 'Full support for recording and replaying state of objects in scene. With optimizations for performance and storage.',
-        projectImages: ['assets/images/projects/ai-warehouse/replaydata.png']
-    },  
-    {
-        id: 3,
-        category: 'aiw',
-        projectName: 'Unit Tests & Automation',
-        description: 'Space to feature collaborations, commissions, or shipped features.',
-        projectImages: []
+        projectImages: [
+            { src: 'assets/images/projects/ai-warehouse/videos/using replay system.mp4', caption: 'Using the replay system to record and replay the state of objects in the scene.' },
+            { src: 'assets/images/projects/ai-warehouse/replaydata.png', caption: 'Example of the scriptable object used to store replay data.' },
+        ]
     },
     {
         id: 4,
@@ -48,44 +46,34 @@ const projectData = [
         projectName: 'AI Warehouse Community & Games!',
         description: '<a href="https://aiwarehouse.itch.io/maze" target="_blank">CLICK TO GO TO THE AI WAREHOUSE MAZE GAME PAGE.</a> <b>Password is albert4ever</b>. </br> Volunteered to take initiative to grow the Discord community to an active 19k members through consistent updates and community engagement.',
         projectImages: [
-            {src: 'assets/images/projects/ai-warehouse/aiw community banner.png', caption: ''},
-            {src: 'assets/images/projects/ai-warehouse/maze-game-analytics.png', caption: 'Maze game analytics', offsetX: 0, offsetY: 0 },
-            {src: 'assets/images/projects/ai-warehouse/game1.png', caption: ''},
-            {src: 'assets/images/projects/ai-warehouse/game2.png', caption: ''},
-            {src: 'assets/images/projects/ai-warehouse/discord_updates.png', caption: 'Growing the community through engagement!'},
-            {src: 'assets/images/projects/ai-warehouse/maze community.png', caption: ''},
+            { src: 'assets/images/projects/ai-warehouse/aiw community banner.png', caption: 'Community Banner for email blasts made out of user fan-art', offsetX: 10, offsetY: 0 },
+            { src: 'assets/images/projects/ai-warehouse/maze-game-analytics.png', caption: 'Maze game analytics', offsetX: 0, offsetY: 0 },
+            { src: 'assets/images/projects/ai-warehouse/game1.png', caption: 'Maze game lava' },
+            { src: 'assets/images/projects/ai-warehouse/game2.png', caption: 'Maze game spikes' },
+            { src: 'assets/images/projects/ai-warehouse/discord_updates.png', caption: 'Growing the community through engagement!' },
+            { src: 'assets/images/projects/ai-warehouse/maze community.png', caption: 'Maze game speedrun forum!' },
         ]
     },
     {
         id: 6,
         category: 'Other Professional',
         projectName: 'WipeRecord: SalesForce-Stripe Connector',
-        description: 'Lead of this project. Bi-directional connector which syncs SalesForce and Stripe accounts and orders, in realtime. Built with JS, Node and Apex. ',
+        description: 'Lead of this project. Bi-directional connector which synced SalesForce and Stripe accounts and orders. Saved us tens of thousands of dollars per year by eliminating the need for a third party service. Built with JS, Node and Apex. ',
         projectImages: []
     },
     {
         id: 6,
         category: 'Other Professional',
         projectName: 'WipeRecord: Expungement Eligibility Test',
-        description: 'First project I worked on at WipeRecord. Refactored a complicated and intertwined logic tree with hundreds of nested if statements and user ending points to be more maintainable and easier to understand. Built in Javascript, Node.js.',
+        description: 'First project I worked on at WipeRecord. Refactored a complicated and intertwined logic tree that had hundreds of nested if statements and user ending points to be more maintainable and easier to understand. Built in Javascript, Node.js.',
         projectImages: []
     },
     {
         id: 6,
         category: 'Other Professional',
-        projectName: 'Motion Inference',
+        projectName: 'Project Motion: Intent Inference',
         description: 'Experimented with and built Unity 3D components that predicted user intention by compositing "human confidence values". No ML, just data collection and processing. First professional position after graduating from UT Austin bootcamp. NDA.',
         projectImages: []
-    },
-    {
-        id: 8,
-        category: 'Personal Projects',
-        projectName: 'Tutorials',
-        description: 'Built in 4 days for GMTK 2025 in a team of 2. Abuse the system to print infinite money! Roguelike mechanics with inventory management. Built in Unity C#.',
-        projectImages: [
-            {type: 'youtube', youtubeId: 'QSO4xjtzOl4', caption: 'Icon Kino, a coding tutorial channel I would like to continue in the future', offsetX: 50, offsetY: 0},
-
-            ]
     },
     {
         id: 7,
@@ -93,41 +81,53 @@ const projectData = [
         projectName: 'Ski Stunt Simulator (in development)',
         description: 'My ultimate passion project based on an old game from the early 2000s. After being inspired by the game, I reached out to the original creator and UBC Professor Michiel van de Panne, who graciously gave me permission to build a modern version of the game based on the screenshots and videos I sent him. Articulated ragdoll physics, PID controllers, level design. Built in Unity C#.',
         projectImages: [
-            { src: 'assets/images/projects/skistunt1.png', caption: 'Ski Stunt Simulator' },
-            { src: 'assets/images/projects/skistunt2.png', caption: 'Ski Stunt Simulator' },
-            { src: 'assets/images/projects/skistunt_flip.gif', caption: 'Flip'},
+            { src: 'assets/images/projects/skistunt1.png', caption: 'Skiing down a slope' },
+            { src: 'assets/images/projects/skistunt2.png', caption: 'Flip over a crate' },
+            { src: 'assets/images/projects/skistunt_flip.gif', caption: 'Testing flips & mouse control' },
         ]
     },
     {
         id: 10,
         category: 'Personal Projects',
         projectName: 'Backflip Master (2020)',
-        description: '',
+        description: 'A simple game where you try to backflip as far as possible. Shelved it during the pandemic but I\'d like to bring it back to life some day! Built in Unity C#.',
         projectImages: [
-            { src: 'assets/images/projects/backflipmaster1.mp4', caption: 'Backflip Master', offsetX: 50, offsetY: 0 },
-            { src: 'assets/images/projects/backflipmaster2.mp4', caption: 'Backflip Master', offsetX: 50, offsetY: 0 },
+            { src: 'assets/images/projects/backflipmaster1.mp4', caption: 'testing flips and landing', offsetX: 50, offsetY: 0 },
+            { src: 'assets/images/projects/backflipmaster2.mp4', caption: 'testing ragdoll physics', offsetX: 50, offsetY: 0 },
         ]
     },
     {
         id: 9,
         category: 'Personal Projects',
         projectName: 'PBAB - Physics Based Arena Brawler (2018)',
-        description: 'My first large project. A top-down physics based arena brawler, which was very fun to build and focused on unique mouse controlled gameplay. It taught me a lot about scope and planning. Unity C#',
-        projectImages: ['assets/images/projects/pbab.png'
-            , { type: 'youtube', youtubeId: 'iwSDHCeKnDw', caption: 'PBAB - Physics Based Arena Brawler (2018)' },
+        description: 'My first large project. A top-down physics based arena brawler, which was very fun to build and focused on unique mouse controlled gameplay. It taught me a lot about scope and planning. Built in Unity C#.',
+        projectImages: [
+            { src: 'assets/images/projects/pbab.png', caption: 'Training Area' },
+            { type: 'youtube', youtubeId: 'iwSDHCeKnDw', caption: 'PBAB Demo Trailer' },
         ]
     },
     {
         id: 8,
         category: 'Personal Projects',
         projectName: 'Game Jams',
-        description: 'Built in 4 days for GMTK 2025 in a team of 2. Abuse the system to print infinite money! Roguelike mechanics with inventory management. Built in Unity C#.',
+        description: '',
         projectImages: [
-            {src: 'assets/images/projects/moneyglitch.gif', caption: 'Infinity Money Glitch (GMTK 2025)', offsetX: 50, offsetY: 0},
-            {type: 'youtube', youtubeId: 'S3t4doUekRk', caption: 'Unboxing Simulator (GMTK 2022)', offsetX: 50, offsetY: 0},
-            {src: 'assets/images/projects/meteor.png', caption: 'Meteor (GMTK 2021)', offsetX: 0, offsetY: 0},
-            {src: 'assets/images/projects/deepcore.jpg', caption: 'Deepcore (SCREAM LITE 2020)', offsetX: 0, offsetY: 0},
-            ]
+            { src: 'assets/images/projects/moneyglitch.gif', caption: 'Infinity Money Glitch (GMTK 2025)', offsetX: 50, offsetY: 0 },
+            { type: 'youtube', youtubeId: 'S3t4doUekRk', caption: 'Unboxing Simulator (GMTK 2022)', offsetX: 50, offsetY: 0 },
+            { src: 'assets/images/projects/meteor.png', caption: 'Meteor (GMTK 2021)', offsetX: 50, offsetY: 0 },
+            { src: 'assets/images/projects/deepcore.jpg', caption: 'Deepcore (SCREAM LITE 2020)', offsetX: 0, offsetY: 0 },
+        ]
+    },
+    {
+        id: 8,
+        category: '... Other Things',
+        projectName: 'Tutorials & Talks',
+        description: '',
+        projectImages: [
+            { type: 'youtube', youtubeId: 'QSO4xjtzOl4', caption: 'Icon Kino, a coding tutorial channel I would like to continue in the future', offsetX: 10, offsetY: 0 },
+            { src: 'assets/images/projects/utmist.png', caption: 'Keynote speaker at UTMIST\'s AI Squared 2024 and 2025. <br/><a href="https://www.utmist.ca/" target="_blank">Click here to visit their website</a>', offsetX: 5, offsetY: 0 },
+            { src: 'assets/images/projects/tutoring.png', caption: 'Tutoring C# and Game Development both in person and online for 4 years. 5 stars on Wyzant!', offsetX: 5, offsetY: 0 },
+        ]
     },
     // https://www.youtube.com/watch?v=QSO4xjtzOl4
 ];
