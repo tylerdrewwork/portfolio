@@ -21,7 +21,7 @@ const projectData = [
     },
     {
         id: 2,
-        category: 'aiw',
+        category: 'aiw', 
         projectName: 'Systems',
         description: 'Systems were made to help the Game Development team build environments faster and more efficiently. There were also many other systems created to fulfill the needs of the current production (video).',
         projectImages: [
