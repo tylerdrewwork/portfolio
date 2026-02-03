@@ -1,13 +1,14 @@
 import AboutLinks from './AboutLinks';
 import './About.scss';
+import PrettyHeaderSVG from '../Utils/PrettyHeaderSVG';
 
 function AboutIntro() {
     return (
         <section className="about-intro">
-            <h1 className="about-name">Hi! I'm Tyler Smith</h1>
+            <PrettyHeaderSVG className="about-name-svg" title="Hi! I'm Tyler Smith" />
             <div className="about-bio">
                 <p>
-                    Software Engineer with almost 10 years of C# Unity experience and 4+ years of professional experience.
+                    Developing for 10 years in Unity C#, and 4+ years professionally.
                 </p>
                 <p>
                     My strengths are in game design, development, and systems architecture.
