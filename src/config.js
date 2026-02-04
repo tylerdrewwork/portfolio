@@ -14,7 +14,7 @@ export const contactInfo = {
   // website: 'https://yourwebsite.com',
   linkedin: 'https://www.linkedin.com/in/tyler-smith-atx/',
   github: 'https://github.com/tylerdrewwork',
-  resume: getAssetUrl('assets/Tyler_Smith_Experienced_C%23_Engineer.pdf'),
+  resume: getAssetUrl('assets/Tyler_Smith_Resume.pdf'),
   yearsExperience: 10,
   openToWork: true,
 };
