@@ -105,7 +105,7 @@ const projectData = [
         id: 9,
         category: 'Personal Projects',
         projectName: 'PBAB - Physics Based Arena Brawler (2018)',
-        description: 'My first large project. A top-down physics based arena brawler, which was very fun to build and focused on unique mouse controlled gameplay. It taught me a lot about scope and planning. Built in Unity C#.',
+        description: 'My first large project. A top-down physics simulation arena, which was very fun to build and focused on unique mouse controlled gameplay. It taught me a lot about scope and planning. Built in Unity C#.',
         projectImages: [
             { src: 'assets/images/projects/pbab.png', caption: 'Training Area' },
             { type: 'youtube', youtubeId: 'iwSDHCeKnDw', caption: 'PBAB Demo Trailer' },
@@ -133,6 +133,13 @@ const projectData = [
             { src: 'assets/images/projects/utmist.png', caption: 'Keynote speaker at UTMIST\'s AI Squared 2024 and 2025. <br/><a href="https://www.utmist.ca/" target="_blank">Click here to visit their website</a>', offsetX: 5, offsetY: 0 },
             { src: 'assets/images/projects/tutoring.png', caption: 'Tutoring C# and Game Development both in person and online for 4 years. 5 stars on Wyzant!', offsetX: 5, offsetY: 0 },
         ]
+    },
+    {
+        id: 8,
+        category: '... Other Things',
+        projectName: 'Off Your Chest',
+        description: 'One of my favorite projects I have ever worked on. It was a social experience that allowed people to vent their thoughts and feelings anonymously. <a href="https://github.com/tylerdrewwork/Note-Wall" target="_blank">Github Repo</a>. <br /><br /> On the page you were able to write a sticky note and leave it for anyone else on the site to see. So in the end, the project was a single web page full of hundreds of sticky notes that people have left over the years. Some were funny, some were random, and there were quite a bit that were very emotional and raw. The project achieved exactly what I was hoping for, which was to create a sense of connection anonymously online.<br /><br /> Unfortunately, Heroku discontinued their free tier in 2022 and I am no longer funding the project, so the site is no longer available. If the database still exists, I plan on renewing the site and giving a new polish.',
+        projectImages: [        ]
     },
     // https://www.youtube.com/watch?v=QSO4xjtzOl4
 ];
