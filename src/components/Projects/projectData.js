@@ -5,6 +5,18 @@
 const projectData = [
     {
         id: 2,
+        category: 'aiw', 
+        projectName: 'Systems',
+        description: 'Systems were made to help the Game Development team build environments faster and more efficiently. There were also many other systems created to fulfill the needs of the current production (video).',
+        projectImages: [
+            { src: 'assets/images/projects/ai-warehouse/videos/using replay system.mp4', caption: 'REPLAY SYSTEM: Full support for recording and replaying state of objects in scene. With optimizations for performance and storage. Here I am using the replay system to record and replay the state of objects in the scene.' },
+            { src: 'assets/images/projects/ai-warehouse/replaydata.png', caption: 'Example of the scriptable object used to store replay data.' },
+            { src: 'assets/images/projects/ai-warehouse/roomphases.png', caption: 'ROOM PHASES SYSTEM: My first project here, this large and complex observer system allowed us to create more complex environments by using events that are raised based on the room phase.' },
+            { src: 'assets/images/projects/ai-warehouse/documentation.png', caption: 'DOCUMENTATION: Maintained the documentation of our systems, here\'s an example.' },
+        ]
+    }, 
+    {
+        id: 2,
         category: 'aiw',
         projectName: 'Mechanics & Tools',
         description: 'I created all of the agent\'s abilities and the video\'s mechanics that you see in the videos, along with the tooling and systems you don\'t see in the videos! I\'m very proud of the work I did here. <br /><br />Tooling was made for the Game Development and Machine Learning teams on request and sometimes proactively if they agreed it would be helpful.',
@@ -19,18 +31,7 @@ const projectData = [
             
         ]
     },
-    {
-        id: 2,
-        category: 'aiw', 
-        projectName: 'Systems',
-        description: 'Systems were made to help the Game Development team build environments faster and more efficiently. There were also many other systems created to fulfill the needs of the current production (video).',
-        projectImages: [
-            { src: 'assets/images/projects/ai-warehouse/videos/using replay system.mp4', caption: 'REPLAY SYSTEM: Full support for recording and replaying state of objects in scene. With optimizations for performance and storage. Here I am using the replay system to record and replay the state of objects in the scene.' },
-            { src: 'assets/images/projects/ai-warehouse/replaydata.png', caption: 'Example of the scriptable object used to store replay data.' },
-            { src: 'assets/images/projects/ai-warehouse/roomphases.png', caption: 'ROOM PHASES SYSTEM: My first project here, this large and complex observer system allowed us to create more complex environments by using events that are raised based on the room phase.' },
-            { src: 'assets/images/projects/ai-warehouse/documentation.png', caption: 'DOCUMENTATION: Maintained the documentation of our systems, here\'s an example.' },
-        ]
-    },
+    
     {
         id: 1,
         category: 'aiw',
