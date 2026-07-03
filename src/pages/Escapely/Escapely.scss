@@ -1,0 +1,43 @@
+.escapely-input-box {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.escapely-input {
+  width: 100%;
+  max-width: 320px;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  &:focus {
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.08);
+  }
+}
+
+.escapely-fade-overlay {
+  position: fixed;
+  inset: 0;
+  background: #000000;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transition: opacity 0.8s ease;
+
+  &.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
