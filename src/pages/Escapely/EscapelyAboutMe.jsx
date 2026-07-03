@@ -15,14 +15,14 @@ function EscapelyAboutMe() {
             />
             <div className="about-bio">
                  <p style={{ textAlign: 'center' , fontSize: '1.25rem' , fontWeight: '600' }}>
-                    D<AnimatedText animation="glitch">e</AnimatedText>veloping for 10 years in Unity C#, and 4+ years professionally
+                    D<AnimatedText animation="glitch">e</AnimatedText>veloping for 10 years in Unity C#, and 4+ years profes<AnimatedText animation="glitch">s</AnimatedText>ionally
                 </p>
                 <p>
-                    I <AnimatedText animation="bounce">LOVE</AnimatedText> building games, toys, tools, and community-engaging experiences that people can enjoy or learn from. 
-                    I have an especially strong passion for physics and simulation games, which you can see in my projects below.
+                    I <AnimatedText animation="bounce">LOVE</AnimatedText> building games, toys, tools, and <AnimatedText animation="glitch">c</AnimatedText>ommunity-engaging experiences th<AnimatedText animation="glitch">a</AnimatedText>t people can enjoy or learn from. 
+                    I have an es<AnimatedText animation="glitch">p</AnimatedText>ecially strong passion for physics and simulation games, which you can see in my projects below.
                 </p>
                 <p>
-                    My recent work includes <span id="aiw-fx-1">AI</span><span id="aiw-fx-2"> Warehouse</span>, where I led the game development of videos, architected systems, tooling, agents, video mechanics, and environments. I helped drive over <b>60 million views</b> and brought over <b>15k members</b> into our Discord community!! I take a lot of pride in our videos and the amazing community we have.
+                    My recent work includes <span id="aiw-fx-1">AI</span><span id="aiw-fx-2"> Warehouse</span>, where I led the game development of videos, architected systems, tooling, agents, video mechanics, and environments. I helped driv<AnimatedText animation="glitch">e</AnimatedText> over <b>60 million views</b> and brought over <b>15k members</b> into our Discord community!<AnimatedText animation="glitch">!</AnimatedText> I take a lot of pride in our videos and the amazing community we have.
                 </p>
             </div>
             <AboutLinks className="about-links-intro" />
