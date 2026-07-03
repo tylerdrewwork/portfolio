@@ -15,7 +15,7 @@ function AnimatedText({ children, animation = 'wiggle', className = '' }) {
                         key={i}
                         className="animated-text--glitch-letter"
                         data-text={char}
-                        style={{ animationDelay: `${i * 0.15}s` }}
+                        style={{ '--glitch-delay': `${i * 0.15}s` }}
                     >
                         {char}
                     </span>
