@@ -6,9 +6,10 @@ import './AnimatedText.scss';
 
 function AnimatedText({ children, animation = 'wiggle', className = '' }) {
     const animClass = animation === 'none' ? '' : `animated-text--${animation}`;
+    const extraProps = animation === 'glitch' ? { 'data-text': children } : {};
 
     return (
-        <span className={`animated-text ${animClass} ${className}`.trim()}>
+        <span className={`animated-text ${animClass} ${className}`.trim()} {...extraProps}>
             {children}
         </span>
     );

@@ -15,7 +15,7 @@ function EscapelyAboutMe() {
             />
             <div className="about-bio">
                  <p style={{ textAlign: 'center' , fontSize: '1.25rem' , fontWeight: '600' }}>
-                    Developing for 10 years in Unity C#, and 4+ years professionally
+                    D<AnimatedText animation="glitch">e</AnimatedText>veloping for 10 years in Unity C#, and 4+ years professionally
                 </p>
                 <p>
                     I <AnimatedText animation="bounce">LOVE</AnimatedText> building games, toys, tools, and community-engaging experiences that people can enjoy or learn from. 
