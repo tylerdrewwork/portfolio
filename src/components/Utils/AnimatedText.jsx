@@ -1,38 +1,39 @@
 /**
- * Wraps text (or any children) and applies a wiggle, bounce, or glitch animation.
- * Use animation="wiggle" | "bounce" | "glitch" | "none" (default: "wiggle").
+ * Wraps text (or any children) and applies a wiggle, bounce, or flashglow animation.
+ * Use animation="wiggle" | "bounce" | "flashglow" | "none" (default: "wiggle").
  */
-import { useEffect, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import './AnimatedText.scss';
 
 function AnimatedText({ children, animation = 'wiggle', className = '' }) {
     const animClass = animation === 'none' ? '' : `animated-text--${animation}`;
-    const containerRef = useRef(null);
+    const [flashing, setFlashing] = useState(false);
+    const timerRef = useRef(null);
 
     useEffect(() => {
-        if (animation !== 'glitch' || !containerRef.current) return;
+        if (animation !== 'flashglow') return;
 
-        const letters = containerRef.current.querySelectorAll('.animated-text--glitch-letter');
-        letters.forEach((el, i) => {
-            el.style.animationPlayState = 'paused';
-            setTimeout(() => {
-                el.style.animationPlayState = 'running';
-            }, i * 150);
-        });
+        function scheduleFlash() {
+            const delay = 1000 + Math.random() * 1000;
+            timerRef.current = setTimeout(() => {
+                setFlashing(true);
+                setTimeout(() => {
+                    setFlashing(false);
+                    scheduleFlash();
+                }, 400);
+            }, delay);
+        }
+
+        const initialDelay = Math.random() * 2000;
+        timerRef.current = setTimeout(scheduleFlash, initialDelay);
+
+        return () => clearTimeout(timerRef.current);
     }, [animation]);
 
-    if (animation === 'glitch' && typeof children === 'string') {
+    if (animation === 'flashglow') {
         return (
-            <span ref={containerRef} className={`animated-text ${animClass} ${className}`.trim()}>
-                {children.split('').map((char, i) => (
-                    <span
-                        key={i}
-                        className="animated-text--glitch-letter"
-                        data-text={char}
-                    >
-                        {char}
-                    </span>
-                ))}
+            <span className={`animated-text ${animClass} ${flashing ? 'animated-text--flashglow-active' : ''} ${className}`.trim()}>
+                {children}
             </span>
         );
     }

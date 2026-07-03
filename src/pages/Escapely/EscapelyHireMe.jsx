@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import EscapelyLinks from './EscapelyLinks';
 import './EscapelyHireMe.scss';
 
@@ -99,7 +100,7 @@ function EscapelyHireMe() {
             <main className={`escapely-hireme ${revealed ? 'revealed' : ''}`}>
                 <h1>Oh no! You must have escaped my portfolio by accident.</h1>
                 <h1>Here, let me help you out:</h1>
-                <h2><button a="/portfolio/#/escapely">click to return to portfolio</button></h2>
+                <h2><Link to="/escapely" className="escapely-hireme-return-link">click to return to portfolio</Link></h2>
                 <EscapelyLinks className="escapely-hireme-links" />
             </main>
         </div>

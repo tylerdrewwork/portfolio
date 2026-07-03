@@ -56,6 +56,16 @@
   }
 }
 
+.escapely-hireme-return-link {
+  color: #ffffff;
+  text-decoration: underline;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
 .escapely-hireme-links {
   margin-top: 2rem;
   align-items: center;
