@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import About from '../../components/About/About';
-import AboutIntro from '../../components/About/AboutIntro';
+import EscapelyAboutMe from './EscapelyAboutMe';
 import Projects from '../../components/Projects/Projects';
 import AboutLinks from '../../components/About/AboutLinks';
 import '../Home/Home.scss';
@@ -33,7 +33,7 @@ function EscapelyHome() {
                     </aside>
                     <div className="content-panel" data-content-panel>
                         <div className="content-panel-inner">
-                            <AboutIntro />
+                            <EscapelyAboutMe />
                             <div className="escapely-input-box">
                                 <input
                                     className="escapely-input"
