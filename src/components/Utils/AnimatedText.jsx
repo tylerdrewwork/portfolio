@@ -5,7 +5,7 @@
 import { useEffect, useState, useRef } from 'react';
 import './AnimatedText.scss';
 
-function AnimatedText({ children, animation = 'wiggle', className = '' }) {
+function AnimatedText({ children, animation = 'wiggle', className = '', color }) {
     const animClass = animation === 'none' ? '' : `animated-text--${animation}`;
     const [flashing, setFlashing] = useState(false);
     const timerRef = useRef(null);
@@ -31,8 +31,16 @@ function AnimatedText({ children, animation = 'wiggle', className = '' }) {
     }, [animation]);
 
     if (animation === 'flashglow') {
+        const flashStyle = flashing && color ? {
+            color,
+            textShadow: `0 0 8px ${color}99, 0 0 20px ${color}59, 0 0 40px ${color}26`,
+        } : undefined;
+
         return (
-            <span className={`animated-text ${animClass} ${flashing ? 'animated-text--flashglow-active' : ''} ${className}`.trim()}>
+            <span
+                className={`animated-text ${animClass} ${flashing ? 'animated-text--flashglow-active' : ''} ${className}`.trim()}
+                style={flashStyle}
+            >
                 {children}
             </span>
         );
