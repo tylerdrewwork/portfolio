@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import EscapelyLinks from './EscapelyLinks';
 import './EscapelyHireMe.scss';
 
 const CONFETTI_COLORS = ['#ff6b6b', '#ffd93d', '#6bcb77', '#4d96ff', '#ff6fff', '#ffa94d', '#a78bfa'];
@@ -98,6 +99,7 @@ function EscapelyHireMe() {
             <main className={`escapely-hireme ${revealed ? 'revealed' : ''}`}>
                 <h1>You escaped!</h1>
                 <p>Thanks for finding this page.</p>
+                <EscapelyLinks className="escapely-hireme-links" />
             </main>
         </div>
     );
