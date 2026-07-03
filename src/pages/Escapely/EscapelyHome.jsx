@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import About from '../../components/About/About';
 import EscapelyAboutMe from './EscapelyAboutMe';
@@ -10,7 +10,13 @@ import './Escapely.scss';
 function EscapelyHome() {
     const [input, setInput] = useState('');
     const [fading, setFading] = useState(false);
+    const [inputVisible, setInputVisible] = useState(false);
     const navigate = useNavigate();
+
+    useEffect(() => {
+        const timer = setTimeout(() => setInputVisible(true), 1000);
+        return () => clearTimeout(timer);
+    }, []);
 
     const handleChange = (e) => {
         const value = e.target.value;
@@ -34,7 +40,7 @@ function EscapelyHome() {
                     <div className="content-panel" data-content-panel>
                         <div className="content-panel-inner">
                             <EscapelyAboutMe />
-                            <div className="escapely-input-box">
+                            <div className={`escapely-input-box ${inputVisible ? 'visible' : ''}`}>
                                 <input
                                     className="escapely-input"
                                     type="text"

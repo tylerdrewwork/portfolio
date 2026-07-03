@@ -17,7 +17,6 @@
         position: relative;
         display: inline-block;
         animation: animated-text-glitch-idle 2s step-end infinite;
-        animation-delay: var(--glitch-delay, 0s);
 
         &::before,
         &::after {
@@ -32,13 +31,11 @@
         &::before {
             color: #00ff41;
             animation: animated-text-glitch-top 2s step-end infinite;
-            animation-delay: var(--glitch-delay, 0s);
         }
 
         &::after {
             color: #00cc33;
             animation: animated-text-glitch-bottom 2s step-end infinite;
-            animation-delay: var(--glitch-delay, 0s);
         }
     }
 }
