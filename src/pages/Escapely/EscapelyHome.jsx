@@ -40,7 +40,7 @@ function EscapelyHome() {
                                     type="text"
                                     value={input}
                                     onChange={handleChange}
-                                    placeholder="Type something..."
+                                    placeholder="What could it be...?"
                                 />
                             </div>
                             <Projects />

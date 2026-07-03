@@ -98,7 +98,6 @@ function EscapelyHireMe() {
             <div className={`escapely-fade-in ${revealed ? 'revealed' : ''}`} />
             <main className={`escapely-hireme ${revealed ? 'revealed' : ''}`}>
                 <h1>You escaped!</h1>
-                <p>Thanks for finding this page.</p>
                 <EscapelyLinks className="escapely-hireme-links" />
             </main>
         </div>
